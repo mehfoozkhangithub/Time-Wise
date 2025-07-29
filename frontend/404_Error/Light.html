@@ -3,38 +3,63 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>404 Error</title>
+        <title>404 Error Page</title>
         <link rel="stylesheet" href="./CSS/light.css">
     </head>
     <body>
-        <section class="page_404">
+        <section class="wrapper">
+
             <div class="container">
-                <div class="row">
-                    <div class="col-sm-12 ">
-                        <div class="custom_col">
-                            <span style="--i:1">4</span>
-                            <span style="--i:2">0</span>
-                            <span style="--i:3">4</span>
-                            <span style="--i:4"> </span>
-                            <span style="--i:5">E</span>
-                            <span style="--i:6">r</span>
-                            <span style="--i:7">r</span>
-                            <span style="--i:8">o</span>
-                            <span style="--i:9">r</span>
-                            <div class="four_zero_four_bg"></div>
-                            <div class="contant_box_404">
-                                <h3>
-                                    Look like you're lost
-                                </h3>
 
-                                <p>the page you are looking for not avaible!</p>
+                <div id="scene" class="scene" data-hover-only="false">
 
-                                <a href class="link_404">Go to Home</a>
-                            </div>
+                    <div class="circle" data-depth="1.2"></div>
+
+                    <div class="one" data-depth="0.9">
+                        <div class="content">
+                            <span class="piece"></span>
+                            <span class="piece"></span>
+                            <span class="piece"></span>
                         </div>
                     </div>
+
+                    <div class="two" data-depth="0.60">
+                        <div class="content">
+                            <span class="piece"></span>
+                            <span class="piece"></span>
+                            <span class="piece"></span>
+                        </div>
+                    </div>
+
+                    <div class="three" data-depth="0.40">
+                        <div class="content">
+                            <span class="piece"></span>
+                            <span class="piece"></span>
+                            <span class="piece"></span>
+                        </div>
+                    </div>
+
+                    <p class="p404" data-depth="0.50">404</p>
+                    <p class="p404" data-depth="0.10">404</p>
+
                 </div>
+
+                <div class="text">
+                    <article>
+                        <p>Uh oh! Looks like you got lost. <br>Go back to the
+                            homepage if you dare!</p>
+                        <button>i dare!</button>
+                    </article>
+                </div>
+
             </div>
         </section>
     </body>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js">
+    </script>
+    <script>
+                var scene = document.getElementById('scene');
+        var parallax = new Parallax(scene);
+    </script>
 </html>
