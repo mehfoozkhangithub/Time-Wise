@@ -2,67 +2,125 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TimeWise</title>
-    <link rel="stylesheet" href="/frontend/css/index.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;600&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="/frontend/css/AdminDashboard.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
 
 </head>
 
 <body>
-<!-- Sidebar will come here -->
 
-
-<!-- Navbar Dashboard -->
-<div class="navbar_dashbaord">
- <div class="admin_navbar_heading">
-    <h1>Dashboard Overview</h1>
- </div>
- <div class="admin_navbard_details">
-    <!-- Alert -->
-    <i class="fa-regular fa-bell"></i>
-
-    <!-- Admin Account -->
-    <i class="fa-regular fa-user"></i>
-
-    <!-- Dynamic Data -->
-    <div class="admin_user_info">
-        <span class="admin_name">Admin User</span>
-        <span class="admin_email">admin@company.com</span>
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar">
+        <a href="#" class="sidebar-item"><i class="fa-regular fa-clock"></i>Employee Attendance</a>
+        <a href="#" class="sidebar-item"><i class="fa-solid fa-comment"></i> Thoughts of the Day</a>
+        <a href="#" class="sidebar-item"><i class="fa-solid fa-users"></i> Users/Accounts</a>
+        <a href="#" class="sidebar-item"><i class="fa-solid fa-gear"></i> Settings</a>
     </div>
+
+    <!-- Navbar -->
+    <div class="navbar_dashbaord">
+        <!-- Left -->
+        <div class="admin_navbar_left">
+            <button id="sidebarToggle" class="sidebar-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Center -->
+        <div class="admin_navbar_heading">
+            <h1>Dashboard Overview</h1>
+        </div>
+
+        <!-- Right -->
+        <div class="admin_navbard_details">
+            <i class="fa-regular fa-bell" title="Notifications"></i>
+            <i class="fa-regular fa-user"></i>
+          
+<button id="themeToggle" class="theme-toggle-button">Toggle Theme</button>
+
+            <div class="admin_user_info">
+                <span class="admin_name">Admin User</span>
+                <span class="admin_email">admin@company.com</span>
+            </div>
+        </div>
     </div>
-</div>
-<!-- Navbar Dashbaord Ending -->
 
-<!-- Admin Body Starts -->
-   <main class="admin_body">
-    <div class="welcome_div">
-        <h1>Welcome Admin</h1>
-        <h3>Thursday, July 24, 2025</h3>
-        <span>Have a productive day managing your team!</span>
-        <svg width="100%" height="60" viewBox="0 0 600 60" xmlns="http://www.w3.org/2000/svg">
-            <!-- Background Bar -->
-            <rect x="0" y="10" rx="20" ry="20" width="600" height="40" fill="#2A2F3A" />
-        
-            <!-- Progress Fill (65%) -->
-            <rect x="0" y="10" rx="20" ry="20" width="390" height="40" fill="#3EB5E8" />
-        
-            <!-- Centered Text -->
-            <text x="300" y="38" font-family="Inter, sans-serif" font-size="18" fill="#E4E8ED" text-anchor="middle">
-                90% of people are working
-            </text>
-        </svg>
+    <!-- Main Body -->
+    <main class="admin_body">
+        <div class="welcome_div">
+            <h1>Welcome Admin</h1>
+            <h3 id="current-date">Thursday, July 24, 2025</h3>
+            <span>Have a productive day managing your team!</span>
+            <svg width="100%" height="60" viewBox="0 0 600 60" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0" y="10" rx="20" ry="20" width="600" height="40" fill="#2A2F3A" />
+                <rect x="0" y="10" rx="20" ry="20" width="540" height="40" fill="#3EB5E8" />
+                <text x="300" y="38" font-family="Inter, sans-serif" font-size="18" fill="#E4E8ED" text-anchor="middle">
+                    90% of people are working
+                </text>
+            </svg>
+        </div>
 
+        <div class="admin_time">
+            <i class="fa-regular fa-clock"></i>
+            <div id="current_time"></div>
+            <h3>Current Time</h3>
+        </div>
 
+        <section class="dashboard_data">
+            <div class="total_employees">
+                <div class="heading">
+                    <h2>Total Employees</h2>
+                    <i class="fa-solid fa-users"></i>
+                </div>
+                <div class="content">
+                    <h3>156</h3>
+                    <span style="color: #50CD89;"><b>+12</b> this month</span>
+                </div>
+            </div>
 
-    </div>
-   </main>
-<!-- Admin Body Ends -->
+            <div class="active_today">
+                <div class="heading">
+                    <h2>Active Today</h2>
+                    <i class="fa-solid fa-user-check"></i>
+                </div>
+                <div class="content">
+                    <h3>142</h3>
+                    <span style="color: #3E97FF;"><b>91%</b> Attendance</span>
+                </div>
+            </div>
+
+            <div class="late_div">
+                <div class="heading">
+                    <h2>Late Check-ins</h2>
+                    <i class="fa-regular fa-clock"></i>
+                </div>
+                <div class="content">
+                    <h3>8</h3>
+                    <span style="color: #F1416C;"><b>-3</b> from yesterday</span>
+                </div>
+            </div>
+
+            <div class="workhours">
+                <div class="heading">
+                    <h2>Avg. Workhours</h2>
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="content">
+                    <h3>8</h3>
+                    <span style="color: #FF9F43;"><b>+0.3h</b> this week</span>
+                </div>
+            </div>
+        </section>
+    </main>
 </body>
-<script>
-</script>
-
+<script src="js/AdminDashboard.js"></script>
 </html>
