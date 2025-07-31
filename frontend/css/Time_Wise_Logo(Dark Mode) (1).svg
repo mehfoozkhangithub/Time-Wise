@@ -1,0 +1,60 @@
+<svg width="300" height="120" style="background: #1F242D" xmlns="http://www.w3.org/2000/svg">
+  <!-- Define blur filter -->
+  <defs>
+    <filter id="blur">
+      <feGaussianBlur stdDeviation="2" />
+    </filter>
+  </defs>
+
+  <!-- Clock Circle Background -->
+  <circle
+    cx="60"
+    cy="60"
+    r="50"
+    fill="#2A2F3A"
+    stroke="#fff"
+    stroke-width="2"
+  />
+  
+  <!-- Clock Tick Marks -->
+  <line x1="60" y1="15" x2="60" y2="25" stroke="#60A5FA" stroke-width="3"/>
+  <line x1="81.65" y1="20.67" x2="79.33" y2="28.67" stroke="#60A5FA" stroke-width="2"/>
+  <line x1="97.32" y1="35.67" x2="91.32" y2="40.67" stroke="#60A5FA" stroke-width="2"/>
+  <line x1="105" y1="60" x2="95" y2="60" stroke="#60A5FA" stroke-width="3"/>
+  <line x1="97.32" y1="84.33" x2="91.32" y2="79.33" stroke="#60A5FA" stroke-width="2"/>
+  <line x1="81.65" y1="99.33" x2="79.33" y2="91.33" stroke="#60A5FA" stroke-width="2"/>
+  <line x1="60" y1="105" x2="60" y2="95" stroke="#60A5FA" stroke-width="3"/>
+  <line x1="38.35" y1="99.33" x2="40.67" y2="91.33" stroke="#60A5FA" stroke-width="2"/>
+  <line x1="22.68" y1="84.33" x2="28.68" y2="79.33" stroke="#60A5FA" stroke-width="2"/>
+  <line x1="15" y1="60" x2="25" y2="60" stroke="#60A5FA" stroke-width="3"/>
+  <line x1="22.68" y1="35.67" x2="28.68" y2="40.67" stroke="#60A5FA" stroke-width="2"/>
+  <line x1="38.35" y1="20.67" x2="40.67" y2="28.67" stroke="#60A5FA" stroke-width="2"/>
+  
+  <!-- Clock Hands -->
+  <line x1="60" y1="60" x2="60" y2="35" stroke="#60A5FA" stroke-width="4" stroke-linecap="round"/>
+  <line x1="60" y1="60" x2="85" y2="35" stroke="#60A5FA" stroke-width="3" stroke-linecap="round"/>
+  
+  <!-- Center Dot -->
+  <circle cx="60" cy="60" r="3" fill="#60A5FA" />
+  
+  <!-- Stylized Hand/Wave Element -->
+  <path d="M 15 85 Q 25 75 35 80 Q 45 85 55 75 Q 65 70 75 75 Q 85 80 95 75 Q 105 70 115 75"
+        fill="none" stroke="#374151" stroke-width="8" stroke-linecap="round"/>
+  <path d="M 20 95 Q 30 85 40 90 Q 50 95 60 85 Q 70 80 80 85 Q 90 90 100 85"
+        fill="none" stroke="#374151" stroke-width="6" stroke-linecap="round"/>
+  <path d="M 25 105 Q 35 95 45 100 Q 55 105 65 95 Q 75 90 85 95"
+        fill="none" stroke="#374151" stroke-width="4" stroke-linecap="round"/>
+  
+  <!-- TIMEWISE Text -->
+  <text x="120" y="70" font-size="32" font-weight="bold" fill="#60A5FA" font-family="Arial, sans-serif">TIME</text>
+  <text x="200" y="70" font-size="32" font-weight="bold" fill="#FFFFFF" font-family="Arial, sans-serif">WISE</text>
+  
+  <!-- Subtle glow around clock -->
+  <circle cx="60" cy="60" r="52" fill="none" stroke="#60A5FA" stroke-opacity="0.2" stroke-width="1"/>
+  
+  <!-- Text glow effect using filter -->
+  <text x="120" y="70" font-size="32" font-weight="bold" fill="#60A5FA" fill-opacity="0.3"
+        font-family="Arial, sans-serif" filter="url(#blur)">TIME</text>
+  <text x="200" y="70" font-size="32" font-weight="bold" fill="#FFFFFF" fill-opacity="0.3"
+        font-family="Arial, sans-serif" filter="url(#blur)">WISE</text>
+</svg>
