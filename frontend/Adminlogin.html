@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AdminLogin</title>
+  <link rel="stylesheet" href="css/AdminDashboard.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;600&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+<div class="login_wrapper">
+ <div class="login_container">
+  <h1>TimeWise Admin</h1>
+  <form id="adminLoginForm">
+    <input type="text" id="adminUsername" placeholder="Admin Username" class="admin_input" required/>
+    <input type="password" id="adminPassword" placeholder="Password" class="admin_input" required/>
+    <button type="submit" class="admin_button">Login</button>
+    <p id="errorMessage" class="error_message"></p>
+  </form>
+ </div>
+</div>
+</body>
+<script src="js/AdminLogin.js"></script>
+</html>
