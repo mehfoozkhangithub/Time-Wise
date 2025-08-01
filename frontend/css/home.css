@@ -1,0 +1,197 @@
+
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f4f4f4;
+  /* color: #333; */
+}
+
+
+
+
+
+
+.user {
+  font-weight: bold;
+}
+
+main {
+  /* padding: 20px; */
+  width: 80%;
+  margin: auto
+  ;
+}
+
+.welcome {
+  background: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-left: 4px solid #007bff;
+  text-align: center;
+  position: relative;
+
+}
+
+.welcome h2{
+  font-size: 32px;
+}
+
+.welcome img{
+  position: absolute;
+  width: 60px;
+  top: 13%;
+  left: 66%;
+}
+
+
+
+.date-time {
+  color: #666;
+  font-size: 17px;
+}
+
+blockquote {
+    
+  font-style: italic;
+  color: rgb(125, 21, 21);
+  margin-top: 20px;
+  height: 30px;
+   background: #fff;
+   text-align: center;
+  padding: 20px;
+  font-size: 17px;
+  font-weight: 600;
+  box-shadow: 1px 1px 4px black;
+}
+
+.overview {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.overview-head{
+  text-align: center;
+}
+
+.card {
+  flex: 1;
+  background: #fff;
+  padding: 15px;
+  border-left: 4px solid #28a745;
+  position: relative;
+}
+
+.card i {
+  position: absolute;
+  top: 21%;
+  left: 30%;
+  font-size: 25px;
+}
+
+
+.top-thought {
+  background: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.thought-box {
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-top: 10px;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.avatar {
+  background: #007bff;
+  color: white;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-weight: bold;
+}
+
+.thought-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.featured, .view-all {
+  text-decoration: none;
+  color: #007bff;
+}
+
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #111827;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 1.5rem;
+}
+
+.cards {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease;
+}
+
+.cards:hover {
+  transform: translateY(-5px);
+}
+
+.icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.cards h2 {
+  font-size: 22 px;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.cards p {
+  color: #4b5563;
+  font-size: 0.95rem;
+}
+ 
+ .view{
+  
+    color: #007bff;
+    text-decoration: none;
+} 
+
+.view i{
+  font-size: 20px;  
+  transition: 1s;
+}
+
+.view i:hover{
+  translate: 20px;
+}
