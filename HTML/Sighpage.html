@@ -4,51 +4,55 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../CSS/Sighpage.css" />
-    <!----
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"/>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /-->
+   
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"/>
     <title>Login Page</title>
   </head>
   <body>
+
     <div class="container" id="container">
+
       <div class="sign-up">
         <form>
-          <h2>Create Account</h2>
-          <span>or use email for registeration</span>
+          <!-- <h2>Create Account</h2>
+          <span>or use email for registeration</span> -->
 
           <div class="content_input">
           <input type="text" id="name"  autocomplete="off"  placeholder=""  class="form_input" required/>
           <label for="name">Name</label>
           </div>
-          
+
            <div class="content_input">
-          <input type="text" id="name"  autocomplete="off"  placeholder=""  class="form_input" required/>
+          <input type="email" id="name"  autocomplete="off"  placeholder=""  class="form_input" required/>
           <label for="name">Email</label>
           </div>
 
            <div class="content_input">
-          <input type="text" id="name"  autocomplete="off"  placeholder=""  class="form_input" required/>
+          <input type="password" id="name"  autocomplete="off"  placeholder=""  class="form_input" required/>
           <label for="name">Password</label>
+          </div>
 
-          
-          </div >
 
-            <div class="content_input">
-          <input type="text" id="name"  autocomplete="off"  placeholder=""  class="form_input" required/>
+          <div class="content_input">
+          <input type="password" id="name"  autocomplete="off"  placeholder=""  class="form_input" required/>
           <label for="name">Confirm Password</label>
           </div>
            
-          <!--input type="text" placeholder="Email" />
-          <input type="password" placeholder="Password" />
-           <input type="password" placeholder="Confirm Password" /-->
+            <div class="content_input">
+          <input type="date" id="name"  autocomplete="off"  placeholder="D O B"  class="form_input_1" required/>
+          </div>
+                         
+              <div class="content_input">
+               <select>
+                <option>Gender</option>
+                <option>male</option>
+                <option>Fmale</option>
+                <option>Other</option>
+               </select>
+            </div>
+
           <button>Sign Up</button>
         </form>
       </div>
@@ -57,7 +61,7 @@
 
       <div class="sign-in">
         <form>
-          <h1 class="sign_in">Sign In</h1>
+          <h1 class="sign_in">Login </h1>
 
           <span>or use email password</span>
 
@@ -67,12 +71,11 @@
           </div>
           
            <div class="content_input">
-          <input type="text" id="name"  autocomplete="off"  placeholder=""  class="form_input" required/>
+          <input type="password" id="name"  autocomplete="off"  placeholder=""  class="form_input" required/>
           <label for="name">Password</label>
           </div>
+           
 
-          <!--input type="text" placeholder="Email" />
-          <input type="password" placeholder="Password" /-->
           
           <a href="#">Forgot password</a>
           <button>Sign In</button>
