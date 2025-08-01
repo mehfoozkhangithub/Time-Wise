@@ -163,3 +163,7 @@ Color Name: Soft Coral
 Hex: #F2A3A3
 
 Muted red for errors — blends well with soft theme.
+
+Fonts used :- 
+Headings - Poppins
+Inner Body/Text - Inter
