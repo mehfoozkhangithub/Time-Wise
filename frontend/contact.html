@@ -13,6 +13,7 @@
         integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    
 
 </head>
 
@@ -106,40 +107,8 @@
 
     </div>
 
-    <script>
-        const FAQData = [
+    <script src="js/Contact.js"></script>
 
-            {
-                question: "What is your return policy?",
-                answer: "We offer a 30-day money-back guarantee on all our products. If you're not satisfied with your purchase, simply return it within 30 days of receipt for a full refund."
-            },
-
-            {
-                question: "How can I contact customer support?",
-                answer: "You can contact our customer support team by email at 1qNvE@example.com or by phone at +1 (123) 456-7890."
-            },
-
-            {
-                question: "What payment methods do you accept?",
-                answer: "We accept a wide range of payment methods, including credit cards, debit cards, and PayPal."
-            }
-
-        ];
-
-        const faqlist = document.getElementsByid("faq-container")
-
-        const FAQhtml = FAQData.map((faq) => {
-            return `
-                <div class="faq">
-                    <div class="question">${faq.question}</div>
-                    <div class="answer">${faq.answer}</div>
-                </div>
-             `
-            }).join("");
-
-            faqlist.innerHTML = FAQhtml
-
-    </script>
 </body>
 
 </html>

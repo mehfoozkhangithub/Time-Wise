@@ -132,3 +132,51 @@ textarea[placeholder] {
 .FAQ_head{
   text-align: center;
 }
+
+#faq-container{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 30px ;
+
+}
+
+.faq{ 
+  display: flex;
+  flex-direction: column;
+  /* gap: 10px; */
+  /* padding-top: 10px; */
+  margin-left: 9rem;
+  margin-right: 9rem;
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 10px;
+   /* background-color: gray;  */
+}
+
+.plus{
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.question{
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0px;
+  /* padding: 10px; */
+  padding-left: 10px;
+
+  /* box-shadow: 10px 10px 20px 20px rgba(0, 0, 0, 0.15); */
+  cursor: pointer;
+
+}
+
+.answer{
+  display: none;
+   transition: all 3s ease-in-out;
+   padding: 10px;
+}
+
+.answer.active{
+  display: block;
+}
