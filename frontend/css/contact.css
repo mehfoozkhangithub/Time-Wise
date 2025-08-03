@@ -99,6 +99,7 @@ input {
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
 textarea {
@@ -109,7 +110,8 @@ textarea {
 }
 
 textarea[placeholder] {
-  font-family: 'Times New Roman', Times, serif;
+  /* font-family: 'Times New Roman', Times, serif; */
+  font-family: 'Poppins', sans-serif;
   font-size: 16px;
 }
 
@@ -128,6 +130,8 @@ textarea[placeholder] {
   background-color: black;
   color: white;
 }
+
+/*---------- FAQ questions CSS starts here------------- */
 
 .FAQ{
   margin-top: 50px;
@@ -195,6 +199,7 @@ textarea[placeholder] {
   color: #333;
   padding-left: 10px;
   margin-top: 5px;
+  width: 70%;
 }
 
 .answer.active {
