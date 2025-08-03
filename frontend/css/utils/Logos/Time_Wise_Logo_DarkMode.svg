@@ -1,4 +1,4 @@
-<svg width="300" height="120" style="background: #1F242D" xmlns="http://www.w3.org/2000/svg">
+<svg width="300" height="120" style="" xmlns="http://www.w3.org/2000/svg">
   <!-- Define blur filter -->
   <defs>
     <filter id="blur">

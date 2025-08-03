@@ -14,84 +14,139 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-    <body>
+<body>
+    <header class="header">
 
-        <div class="Full_Contact">
-            <div class="content">
-                <div class="img"></div>
-                <h2 class="head">Contact Us</h2>
-            </div>
+    </header>
 
-            <div class="Contact">
-
-                <div class="info">
-
-                    <div class="head1">
-                        <h1>GET IN TOUCH WITH US</h1>
-                        <p class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime debitis, distinctio facilis eveniet fugiat, ?</p>
-                    </div>
-
-                    <div class="information">
-                        <i class="fa-solid fa-envelope"></i>
-                        <div class="desc">
-                            <h2>Email Us</h2>
-                            <p>7o4GJ@example.com</p>
-                        </div>
-                    </div>
-
-                    <div class="information">
-                        <i class="fa-solid fa-phone"></i>
-                        <div class="desc">
-                            <h2>Call Us</h2>
-                            <p>123-456-7890</p>
-                        </div>
-                    </div>
-
-                    <div class="information">
-                        <i class="fa-solid fa-location-dot"></i>
-                        <div class="desc">
-                            <h2>Location</h2>
-                            <p>123 Main St, City, State, Country</p>
-                        </div>
-                    </div>  
-
-                    <div class="information">
-                      <i class="fa-solid fa-alarm-clock"></i>
-                        <div class="desc">
-                            <h2>Working Hours</h2>
-                            <p>Mon-Fri , 9 AM to 6 PM</p>
-                        </div>
-                    </div> 
-
-                </div>
-
-
-                <div class="form_part">
-                    <form action="">
-                        <div class="inputs">
-                            <input type="text" placeholder="Your Name">
-                             <input type="email" placeholder="Your Email">
-                        </div>
-                    
-                        <div>
-                            <input type="text" placeholder="Subject">
-                        </div>
-
-                        <div>
-                            <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
-                        </div>
-
-                         <div>
-                           <button type="btn" class="btn">Send Message</button>
-                        </div>
-
-                    </form>
-                </div>
-
-
-            </div>
-            
+    <div class="Full_Contact">
+        <div class="content">
+            <div class="img"></div>
+            <h2 class="head">Contact Us</h2>
         </div>
-    </body>
+
+        <div class="Contact">
+
+            <div class="info">
+
+                <div class="head1">
+                    <h1>GET IN TOUCH WITH US</h1>
+                    <p class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime debitis, distinctio
+                        facilis eveniet fugiat, ?</p>
+                </div>
+
+                <div class="information">
+                    <i class="fa-solid fa-envelope"></i>
+                    <div class="desc">
+                        <h2>Email Us</h2>
+                        <p>7o4GJ@example.com</p>
+                    </div>
+                </div>
+
+                <div class="information">
+                    <i class="fa-solid fa-phone"></i>
+                    <div class="desc">
+                        <h2>Call Us</h2>
+                        <p>123-456-7890</p>
+                    </div>
+                </div>
+
+                <div class="information">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div class="desc">
+                        <h2>Location</h2>
+                        <p>123 Main St, City, State, Country</p>
+                    </div>
+                </div>
+
+                <div class="information">
+                    <i class="fa-solid fa-alarm-clock"></i>
+                    <div class="desc">
+                        <h2>Working Hours</h2>
+                        <p>Mon-Fri , 9 AM to 6 PM</p>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="form_part">
+                <form action="">
+                    <div class="inputs">
+                        <input type="text" placeholder="Your Name">
+                        <input type="email" placeholder="Your Email">
+                    </div>
+
+                    <div>
+                        <input type="text" placeholder="Subject">
+                    </div>
+
+                    <div>
+                        <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
+                    </div>
+
+                    <div>
+                        <button type="btn" class="btn">Send Message</button>
+                    </div>
+
+                </form>
+            </div>
+
+
+        </div>
+
+    </div>
+</body>
+
+<footer class="footer">
+
+</footer>
+
+
+<script type="module">
+    import { navbar, style, footer } from "../frontend/js/nav_footer.js"
+    document.querySelector(".header").innerHTML = navbar();
+
+    let styleTag = document.createElement("style");
+    styleTag.textContent = style();
+    document.head.append(styleTag);
+
+    document.querySelector(".footer").innerHTML = footer();
+
+
+    const navBar = document.querySelector('.navbar-container');
+    const header = document.querySelector('.header');
+
+    // when we scroll the webpage a little bit then both classes fixed & fixed-header will be added & when we go on the top of the webpage these classes will be removed
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 0) {
+            navBar.classList.add('fixed');
+            header.classList.add('fixed-header');
+        } else {
+            navBar.classList.remove('fixed');
+            header.classList.remove('fixed-header');
+        }
+    });
+
+    // scroll button
+    const scrollBtn = document.querySelector(".fa-angle-up");
+
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 100) {
+            scrollBtn.classList.add("showScrollBtn");
+        }
+        else {
+            scrollBtn.classList.remove("showScrollBtn")
+        }
+    });
+
+    window.scrollUp = function () {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        })
+    }
+
+</script>
 
 </html>
