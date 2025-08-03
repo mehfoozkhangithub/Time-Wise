@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./css/SignUpPage.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" />
+  <title>Login Page</title>
+</head>
+
+<body>
+  <div class="container" id="container">
+    <!-- Sign Up Form -->
+    <div class="sign-up">
+      <form id="signup-form">
+        <div class="content_input">
+          <input type="text" id="signup-name" name="name" autocomplete="off" placeholder="" class="form_input"
+            pattern="[A-Za-z ]{2,50}" title="Name should contain only letters and spaces (2-50 characters)" />
+          <label for="signup-name">Full Name</label>
+          <div class="error-message" id="name-error"></div>
+        </div>
+
+        <div class="content_input">
+          <input type="email" id="signup-email" name="email" autocomplete="off" placeholder="" class="form_input"
+            title="Please enter a valid email address" />
+          <label for="signup-email">Email</label>
+          <div class="error-message" id="email-error"></div>
+        </div>
+
+        <div class="content_input">
+          <input type="password" id="signup-password" name="password" autocomplete="off" placeholder=""
+            class="form_input" minlength="8" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
+            title="Password must be at least 8 characters with at least one letter and one number" />
+          <label for="signup-password">Password</label>
+          <div class="error-message" id="password-error"></div>
+        </div>
+
+        <div class="content_input">
+          <input type="password" id="signup-confirm-password" autocomplete="off" placeholder="" class="form_input" />
+          <label for="signup-confirm-password">Confirm Password</label>
+          <div class="error-message" id="confirm-password-error"></div>
+        </div>
+
+        <div class="content_input">
+          <input type="date" id="signup-dob" name="dob" class="form_input_1" required />
+          <div class="error-message" id="dob-error"></div>
+        </div>
+
+        <div class="content_input">
+          <select id="signup-gender" name="gender" required>
+            <option value="">Select Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+          </select>
+          <div class="error-message" id="gender-error"></div>
+        </div>
+
+        <button type="submit">Sign Up</button>
+      </form>
+    </div>
+
+    <!-- Sign In Form -->
+    <div class="sign-in">
+      <form id="login-form">
+        <h1 class="sign_in">Login</h1>
+        <span>or use email password</span>
+
+        <div class="content_input">
+          <input type="email" id="login-email" name="email" autocomplete="off" placeholder="" class="form_input"
+            required />
+          <label for="login-email">Email</label>
+          <div class="error-message" id="login-email-error"></div>
+        </div>
+
+        <div class="content_input">
+          <input type="password" id="login-password" name="password" autocomplete="off" placeholder=""
+            class="form_input" required />
+          <label for="login-password">Password</label>
+          <div class="error-message" id="login-password-error"></div>
+        </div>
+
+        <a href="#">Forgot password</a>
+        <button type="submit">Log In</button>
+      </form>
+    </div>
+
+    <div class="toogle-container">
+      <div class="toogle">
+        <div class="toogle-panel toogle-left">
+          <h1>Welcome Back!</h1>
+          <p>Sign in to access your account</p>
+          <button class="hidden" id="login">Sign In</button>
+        </div>
+        <div class="toogle-panel toogle-right">
+          <h1>Hello, Friend!</h1>
+          <p>Register to start your journey with us</p>
+          <button class="hidden" id="register">Sign Up</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Popup Overlay (should be present in HTML) -->
+<div class="popup-overlay" id="popup-overlay"></div>
+
+<!-- Thought Popup -->
+<div class="popup" id="thought-popup">
+  <div class="parents">
+    <h1>Welcome!</h1>
+    <p>You can share a thought if you'd like, or continue to the home page</p>
+
+    <div class="content_textarea">
+      <textarea id="thought-text" class="form_textarea" maxlength="300"
+        placeholder="Share your thought (optional)"></textarea>
+      <div class="character-count"><span id="char-count">0</span>/300</div>
+    </div>
+
+    <div class="button-container">
+      <button class="continue-btn" id="continue-btn">Continue to Home</button>
+      <button class="submit-btn" id="submit-thought">Submit Thought</button>
+    </div>
+  </div>
+  <div class="popup-close-btn" id="close-thought">&times;</div>
+</div>
+
+<!-- Success Popup -->
+<div class="popup" id="success-popup">
+  <div class="success-message">
+    <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none"
+      stroke="var(--success)" stroke-width="2">
+      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+      <polyline points="22 4 12 14.01 9 11.01"></polyline>
+    </svg>
+    <h2>Registration Successful!</h2>
+    <p>You can now login with your credentials</p>
+    <button class="continue-btn" id="close-success">Continue to Login</button>
+  </div>
+</div>
+
+  <script src="js/SignUpPage.js"></script>
+</body>
+
+</html>

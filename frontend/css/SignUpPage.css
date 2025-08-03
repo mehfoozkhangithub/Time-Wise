@@ -1,19 +1,67 @@
+
+/* Essentials */
+
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+DK+Loopet:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* ============================
+   THEME COLOR VARIABLES
+============================= */
+:root {
+  --bg: #F9FBFC;
+  --surface: #EEF3F7;
+  --primary: #29A3E0;
+  --primary-hover: #218FC4;
+  --secondary: #D4EBF7;
+  --text-primary: #2C2F3A;
+  --text-secondary: #6E7A88;
+  --border: #D6DDE3;
+  --success: #A9D6C2;
+  --error: #F2A3A3;
+}
+
+body.dark-mode {
+  --bg: #1F242D;
+  --surface: #2A2F3A;
+  --primary: #3EB5E8;
+  --primary-hover: #53C1F0;
+  --secondary: #8AD5F2;
+  --text-primary: #E4E8ED;
+  --text-secondary: #A2ACB8;
+  --border: #3B4251;
+  --success: #81E6C3;
+  --error: #F17C7C;
+}
+
+/* ============================
+   GLOBAL STYLES
+============================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
 }
 
 body {
-  background-color: #c9d6ff;
-  background: linear-gradient(to right, #e2e2e2, #c9d6ff);
-  display: flex;
+  font-family: 'Inter', sans-serif;
+  color: var(--text-primary);
+  color: var(--text-secondary);
+  background: var(--bg);
+  min-height: 100vh;
+  line-height: 1.5;
+  transition: background-color 0.3s, color 0.3s;
+  display: grid;
+  height: 100vh;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  height: 100vh;
 }
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
 
 .container {
   background-color: #fff;
@@ -298,6 +346,44 @@ label{
         font-size:16px;
 }
 
+.form_textarea {
+  position: absolute;
+  height: 120px; 
+  width: 100%;
+  border-radius: 0.5em;
+  outline: none;
+  padding: 1em;
+  background-color: #eee;
+  font-size: 14px;
+  resize: none; 
+  border: none;
+  font-family: inherit;
+}
+
+.form_textarea:hover {
+  border: 1px solid rgb(70, 68, 68);
+}
+
+.form_textarea:focus {
+  border: 1px solid rgb(70, 68, 68);
+}
+
+.character-count {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  background-color: rgba(238, 238, 238, 0.7);
+  padding: 2px 6px;
+  border-radius: 10px;
+}
+
+.content_input {
+  position: relative;
+  padding-bottom: 25px; 
+}
+
 
 
 /*button section code*/
@@ -346,5 +432,203 @@ button:hover::before {
  width: 100%;
 }
 
+/* Popup Overlay */
 
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  background-color: var(--surface);
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+  padding: 2.5rem 3rem;
+  width: 90%;
+  max-width: 650px;
+  min-height: 500px;
+  display: none;
+  flex-direction: column;
+  z-index: 1001;
+  transition: all 0.3s ease;
+  opacity: 0;
+  border: 1px solid var(--border);
+}
 
+.popup-active {
+  display: flex !important;
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+
+.popup h1 {
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  text-align: center;
+  color: var(--text-primary);
+}
+
+.popup .content_input {
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+.popup .submit-btn {
+  background-color: var(--primary);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.popup .submit-btn:hover {
+  background-color: var(--primary-hover);
+  translate: translateY(-2px);
+}
+
+.popup-close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 1.8rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.popup-close-btn:hover {
+  color: var(--primary);
+  transform: scale(1.1);
+}
+
+/* Button Container */
+.popup .button-container {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.popup .continue-btn {
+  background-color: var(--success);
+  color: var(--text-primary);
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.popup .continue-btn:hover {
+  background-color: var(--success);
+  filter: brightness(0.9);
+  transform: translateY(-2px);
+}
+
+.content_textarea {
+  position: relative;
+  width: 90%;
+  max-width: 100%;
+  margin: 9px 0px;
+  height: 180px;
+}
+
+.form_textarea {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 0.5rem;
+  outline: none;
+  padding: 1em;
+  padding-top: 1.5em;
+  background-color: #eee;
+  font-size: 14px;
+  resize: none;
+  border: none;
+  font-family: inherit;
+}
+
+.content_textarea label {
+  position: absolute;
+  color: #696565;
+  font-family: inherit;
+  left: 1em;
+  top: 0.75em;
+  border: none;
+  cursor: text;
+  transition: top 350ms ease-in;
+  font-size: 350ms ease-in;
+  z-index: 1;
+}
+
+/* Label Animation */
+textarea:focus ~ label,
+.form_textarea:not(:placeholder-shown).form_textarea:not(:focus) ~ label {
+  top: -0.5em;
+  padding: 0 0.125em;
+  border: none;
+  color: black;
+  background-color: #eee;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+/* Character Counter */
+.character-count {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  background-color: rgba(238, 238, 238, 0.7);
+  padding: 2px 6px;
+  border-radius: 10px;
+}
+
+/* Error Styling */
+.error-message {
+  color: var(--error);
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+  display: none;
+}
+
+.content_input.error .form_input,
+.content_input.error .form_input_1,
+.content_input.error select {
+  border: 2px solid var(--error);
+  background-color: rgba(242, 163, 163, 0.1);
+}
+
+/* Success Popup */
+.success-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.success-message svg {
+  margin-bottom: 1.5rem;
+}
+
+.success-message h2 {
+  color: var(--success);
+  margin-bottom: 1rem;
+}
+
+.success-message p {
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+}
+
+.success-message .continue-btn {
+  background-color: var(--success);
+  color: var(--text-primary);
+  width: 100%;
+}
