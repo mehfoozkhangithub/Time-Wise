@@ -123,3 +123,11 @@ textarea[placeholder] {
   background-color: black;
   color: white;
 }
+
+.FAQ{
+  margin-top: 50px;
+}
+
+.FAQ_head{
+  text-align: center;
+}
