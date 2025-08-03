@@ -12,94 +12,134 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
         integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
 </head>
 
-    <body>
+<body>
 
-        <div class="Full_Contact">
-            <div class="content">
-                <div class="img"></div>
-                <h2 class="head">Contact Us</h2>
-            </div>
-
-            <div class="Contact">
-
-                <div class="info">
-
-                    <div class="head1">
-                        <h1>GET IN TOUCH WITH US</h1>
-                        <p class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime debitis, distinctio facilis eveniet fugiat, ?</p>
-                    </div>
-
-                    <div class="information">
-                        <i class="fa-solid fa-envelope"></i>
-                        <div class="desc">
-                            <h2>Email Us</h2>
-                            <p>7o4GJ@example.com</p>
-                        </div>
-                    </div>
-
-                    <div class="information">
-                        <i class="fa-solid fa-phone"></i>
-                        <div class="desc">
-                            <h2>Call Us</h2>
-                            <p>123-456-7890</p>
-                        </div>
-                    </div>
-
-                    <div class="information">
-                        <i class="fa-solid fa-location-dot"></i>
-                        <div class="desc">
-                            <h2>Location</h2>
-                            <p>123 Main St, City, State, Country</p>
-                        </div>
-                    </div>  
-
-                    <div class="information">
-                      <i class="fa-solid fa-alarm-clock"></i>
-                        <div class="desc">
-                            <h2>Working Hours</h2>
-                            <p>Mon-Fri , 9 AM to 6 PM</p>
-                        </div>
-                    </div> 
-
-                </div>
-
-
-                <div class="form_part">
-                    <form action="">
-                        <div class="inputs">
-                            <input type="text" placeholder="Your Name">
-                             <input type="email" placeholder="Your Email">
-                        </div>
-                    
-                        <div>
-                            <input type="text" placeholder="Subject">
-                        </div>
-
-                        <div>
-                            <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
-                        </div>
-
-                         <div>
-                           <button type="btn" class="btn">Send Message</button>
-                        </div>
-
-                    </form>
-                </div>
-
-
-            </div>
-
-            <div class="FAQ">
-                <h1 class="FAQ_head">Frequently Asked Questions</h1>
-                
-
-                div.faq-container
-            </div>
-
-            
+    <div class="Full_Contact">
+        <div class="content">
+            <div class="img"></div>
+            <h2 class="head">Contact Us</h2>
         </div>
-    </body>
+
+        <div class="Contact">
+
+            <div class="info">
+
+                <div class="head1">
+                    <h1>GET IN TOUCH WITH US</h1>
+                    <p class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime debitis, distinctio
+                        facilis eveniet fugiat, ?</p>
+                </div>
+
+                <div class="information">
+                    <i class="fa-solid fa-envelope"></i>
+                    <div class="desc">
+                        <h2>Email Us</h2>
+                        <p>7o4GJ@example.com</p>
+                    </div>
+                </div>
+
+                <div class="information">
+                    <i class="fa-solid fa-phone"></i>
+                    <div class="desc">
+                        <h2>Call Us</h2>
+                        <p>123-456-7890</p>
+                    </div>
+                </div>
+
+                <div class="information">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div class="desc">
+                        <h2>Location</h2>
+                        <p>123 Main St, City, State, Country</p>
+                    </div>
+                </div>
+
+                <div class="information">
+                    <i class="fa-solid fa-alarm-clock"></i>
+                    <div class="desc">
+                        <h2>Working Hours</h2>
+                        <p>Mon-Fri , 9 AM to 6 PM</p>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="form_part">
+                <form action="">
+                    <div class="inputs">
+                        <input type="text" placeholder="Your Name">
+                        <input type="email" placeholder="Your Email">
+                    </div>
+
+                    <div>
+                        <input type="text" placeholder="Subject">
+                    </div>
+
+                    <div>
+                        <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
+                    </div>
+
+                    <div>
+                        <button type="btn" class="btn">Send Message</button>
+                    </div>
+
+                </form>
+            </div>
+
+
+        </div>
+
+        <div class="FAQ">
+            <h1 class="FAQ_head">Frequently Asked Questions</h1>
+
+
+            <div id="faq-container">
+
+            </div>
+        </div>
+
+
+    </div>
+
+    <script>
+        const FAQData = [
+
+            {
+                question: "What is your return policy?",
+                answer: "We offer a 30-day money-back guarantee on all our products. If you're not satisfied with your purchase, simply return it within 30 days of receipt for a full refund."
+            },
+
+            {
+                question: "How can I contact customer support?",
+                answer: "You can contact our customer support team by email at 1qNvE@example.com or by phone at +1 (123) 456-7890."
+            },
+
+            {
+                question: "What payment methods do you accept?",
+                answer: "We accept a wide range of payment methods, including credit cards, debit cards, and PayPal."
+            }
+
+        ];
+
+        const faqlist = document.getElementsByid("faq-container")
+
+        const FAQhtml = FAQData.map((faq) => {
+            return `
+                <div class="faq">
+                    <div class="question">${faq.question}</div>
+                    <div class="answer">${faq.answer}</div>
+                </div>
+             `
+            }).join("");
+
+            faqlist.innerHTML = FAQhtml
+
+    </script>
+</body>
 
 </html>
