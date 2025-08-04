@@ -13,7 +13,7 @@
         integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    
+
 
 </head>
 
@@ -78,7 +78,13 @@
                     </div>
 
                     <div>
-                        <input type="text" placeholder="Subject">
+                        <select id="faqDropdown" class="enquiry" onchange="showAnswer(this.value)">
+                            <option value="">Select a question</option>
+                            <option value="0">What is your return policy?</option>
+                            <option value="1">Do you offer customer support?</option>
+                        </select>
+
+                        <p id="faqAnswer" style="margin-top: 10px;"></p>
                     </div>
 
                     <div>

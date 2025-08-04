@@ -77,3 +77,16 @@ document.querySelectorAll(".question").forEach(q => {
         plus.textContent = isOpen ? "-" : "+";
     })
 })
+
+
+// Dropdown code with its contact page 
+
+const Answer = [
+    "You can return any product within 30 days of purchase.",
+    "Yes, 24/7 customer support is available via email and chat."
+]
+
+
+const showAnswer = (index) => {
+    document.getElementById("faqAnswer").textContent = Answer[index] || "";
+}
