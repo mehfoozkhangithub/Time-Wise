@@ -173,3 +173,9 @@ Inner Body/Text - Inter
 const dob = document.querySelector("#dob").value; // "2000-08-04"
 const isoString = new Date(dob).toISOString();
 console.log(isoString); // "2000-08-04T00:00:00.000Z"
+
+
+
+khushi
+
+rohan gaikwad
