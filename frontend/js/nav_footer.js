@@ -2,7 +2,7 @@ export const navbar = () => {
   return `
         <nav class="navbar-container">
             <div class="logo">
-            <img src="../frontend/css/Time_Wise_Logo(Dark Mode) (1).svg" alt="Logo">
+            <img src="./css/utils/Logos/Time_Wise_Logo(Dark Mode).svg" alt="Logo">
         </div>
             <div class="nav-list">
                 <ul>
@@ -18,8 +18,8 @@ export const navbar = () => {
             </div>
         </nav>
         
-    `
-}
+    `;
+};
 
 export const footer = () => {
   return `
@@ -47,8 +47,8 @@ export const footer = () => {
             </div>
             <p>Copyright &copy;2025 Time Wise</p>
         </div>
-  `
-}
+  `;
+};
 
 export const style = () => {
   return `
@@ -110,6 +110,7 @@ export const style = () => {
         .navbar-container .logo img {
           width: 60%;
           height: 50px;
+          margin-top: 7px;
         }
         .nav-list {
           width: 55%;
@@ -276,6 +277,5 @@ export const style = () => {
         }
 
         /* footer part end */
-    `
-}
-
+    `;
+};
