@@ -57,9 +57,12 @@ const faqlist = document.getElementById("faq-container")
 const FAQhtml = FAQData.map((faq) => {
     return `
     <div class="faq">
-        <div class="question">${faq.question}
-        <span class="plus">+</span>
+    
+        <div class="question">
+            ${faq.question}
+            <span class="plus">+</span>
         </div>
+
         <div class="answer">${faq.answer}</div>
     </div>
     `
