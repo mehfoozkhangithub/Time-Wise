@@ -98,7 +98,7 @@ document.getElementById("continue-btn").addEventListener("click", (e) => {
 });
 
 document.getElementById("close-thought").addEventListener("click", () => {
-  redirectToHome();
+  thoughtPopup.classList.remove("popup-active");
 });
 
 // Success Popup
