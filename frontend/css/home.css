@@ -1,17 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+DK+Loopet:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-
-body {
-  font-family: 'Segoe UI', sans-serif;
-  margin: 0;
-  padding: 0;
-  background: #f4f4f4;
-  /* color: #333; */
+/* ============================
+   THEME COLOR VARIABLES
+============================= */
+:root {
+  --bg: #F9FBFC;
+  --surface: #EEF3F7;
+  --primary: #29A3E0;
+  --primary-hover: #218FC4;
+  --secondary: #D4EBF7;
+  --text-primary: #2C2F3A;
+  --text-secondary: #6E7A88;
+  --border: #D6DDE3;
+  --success: #A9D6C2;
+  --error: #F2A3A3;
 }
 
+body.dark-mode {
+  --bg: #1F242D;
+  --surface: #2A2F3A;
+  --primary: #3EB5E8;
+  --primary-hover: #53C1F0;
+  --secondary: #8AD5F2;
+  --text-primary: #E4E8ED;
+  --text-secondary: #A2ACB8;
+  --border: #3B4251;
+  --success: #81E6C3;
+  --error: #F17C7C;
+}
 
+/* ============================
+   GLOBAL STYLES
+============================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--text-primary);
+  color: var(--text-secondary);
+  background: var(--bg);
+  min-height: 100vh;
+  line-height: 1.5;
+  transition: background-color 0.3s, color 0.3s;
+  /* display: grid; */
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
 
-
+h1, h2, h3, h4, h5 {
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-primary);
+  font-weight: 600;
+}
 
 .user {
   font-weight: bold;
