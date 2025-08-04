@@ -113,6 +113,12 @@
     import { navbar, style, footer } from "../frontend/js/nav_footer.js"
     document.querySelector(".header").innerHTML = navbar();
 
+
+    const path = window.location.pathname.toLowerCase().replace(/\/+$/, "");
+    if (path !== "/frontend/home.html") {
+      window.location = "Light.html";
+    }
+
     let styleTag = document.createElement("style");
     styleTag.textContent = style();
     document.head.append(styleTag);
