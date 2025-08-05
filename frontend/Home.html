@@ -9,6 +9,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
     integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;600&display=swap"
+    rel="stylesheet" />
+
+
+
 </head>
 
 <body>
@@ -19,8 +25,8 @@
     <section class="welcome">
       <h2>Welcome Back, Arnav!</h2>
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSM7dr4mPW2uG4sc5tpjmwYOK1dGpA1QV4MjA&s" alt="">
-      <p class="date-time">Thursday, July 24, 2025 </p>
-      <p class="date-time">2:10 Am</p>
+      <p id="current-date">Thursday, July 24, 2025 </p>
+      <p id="current_time">2:10 Am</p>
 
     </section>
 
@@ -47,6 +53,14 @@
         <p>Start your day & track</p>
       </div>
     </section>
+
+    <div class="card break-timer">
+      <h3>Break Timer</h3>
+      <i class="fa-solid fa-coffee"></i>
+      <p>Track your break time</p>
+      <button id="break-button">Take A Break</button>
+    </div>
+
 
     <section class="top-thought">
       <h3>Today's Top Thought</h3>
@@ -108,60 +122,60 @@
 
   </footer>
 
-
-  <script type="module">
-    import { navbar, style, footer } from "../frontend/js/nav_footer.js"
-    document.querySelector(".header").innerHTML = navbar();
-
-
-    const path = window.location.pathname.toLowerCase().replace(/\/+$/, "");
-    if (path !== "/frontend/home.html") {
-      window.location = "Light.html";
-    }
-
-    let styleTag = document.createElement("style");
-    styleTag.textContent = style();
-    document.head.append(styleTag);
-
-    document.querySelector(".footer").innerHTML = footer();
-
-
-    const navBar = document.querySelector('.navbar-container');
-    const header = document.querySelector('.header');
-
-    // when we scroll the webpage a little bit then both classes fixed & fixed-header will be added & when we go on the top of the webpage these classes will be removed
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 0) {
-        navBar.classList.add('fixed');
-        header.classList.add('fixed-header');
-      } else {
-        navBar.classList.remove('fixed');
-        header.classList.remove('fixed-header');
-      }
-    });
-
-    // scroll button
-    const scrollBtn = document.querySelector(".fa-angle-up");
-
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 100) {
-        scrollBtn.classList.add("showScrollBtn");
-      }
-      else {
-        scrollBtn.classList.remove("showScrollBtn")
-      }
-    });
-
-    window.scrollUp = function () {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      })
-    }
-
-  </script>
-
-
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+<script src="./js/Home.js"></script>
+<script type="module">
+  // RAHMAT CODE
+  import { navbar, style, footer } from "./js/nav_footer.js";
+  document.querySelector(".header").innerHTML = navbar();
+
+  const path = window.location.pathname.toLowerCase().replace(/\/+$/, "");
+  if (path !== "/frontend/home.html") {
+    window.location = "Light.html";
+  }
+
+  let styleTag = document.createElement("style");
+  styleTag.textContent = style();
+  document.head.append(styleTag);
+
+  document.querySelector(".footer").innerHTML = footer();
+
+  const navBar = document.querySelector(".navbar-container");
+  const header = document.querySelector(".header");
+
+  // when we scroll the webpage a little bit then both classes fixed & fixed-header will be added & when we go on the top of the webpage these classes will be removed
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 0) {
+      navBar.classList.add("fixed");
+      header.classList.add("fixed-header");
+    } else {
+      navBar.classList.remove("fixed");
+      header.classList.remove("fixed-header");
+    }
+  });
+
+  // scroll button
+  const scrollBtn = document.querySelector(".fa-angle-up");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 100) {
+      scrollBtn.classList.add("showScrollBtn");
+    } else {
+      scrollBtn.classList.remove("showScrollBtn");
+    }
+  });
+
+  window.scrollUp = function () {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+
+</script>
+
+
 
 </html>
