@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dummy Setting Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="./css/setting.css">
+    <script src="./js/setting.js" defer></script>
+</head>
+
+<body>
+
+    <div class="setting-container">
+
+        <div class="setting-content">
+
+            <div class="setting-icon">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </div>
+
+            <div class="account-setting">
+
+                <div class="account-parent">
+                    <i class="fa-regular fa-user"></i>
+                    <h3>Account Settings</h3>
+                    <i class="fa-solid fa-angle-right"></i>
+                    <i class="fa-solid fa-angle-down"></i>
+
+                </div>
+
+                <ul class="account-content">
+                    <li class="edit-profile">
+                        <a href="#">Edit Profile</a>
+                        <i class="fa-solid fa-angle-right"></i>
+                    </li>
+                    <li class="change-pass">
+                        <a href="#">Change Password</a>
+                        <i class="fa-solid fa-angle-right"></i>
+                    </li>
+                    <li class="two-factor">
+                        <a href="#">Two-Factor Authentication</a>
+                        <i class="fa-solid fa-angle-right"></i>
+                    </li>
+                </ul>
+
+            </div>
+
+
+
+            <div class="notification">
+
+                <div class="notifi-parent">
+                    <i class="fa-regular fa-bell"></i>
+                    <h3>Notification</h3>
+                    <i class="fa-solid fa-angle-right"></i>
+                    <i class="fa-solid fa-angle-down"></i>
+                </div>
+
+                <ul class="notifi-content">
+                    <li>
+                        <a href="#">Push Notification</a>
+                        <i class="fa-solid fa-toggle-off"></i>
+                    </li>
+                </ul>
+
+            </div>
+
+            <div class="appearance">
+
+                <div class="appearance-parent">
+                    <i class="fa-regular fa-eye"></i>
+                    <h3>Appearance</h3>
+                    <i class="fa-solid fa-angle-right"></i>
+                    <i class="fa-solid fa-angle-down"></i>
+                </div>
+
+                <div class="theme">
+
+                    <div class="theme-parent">
+                        <h3>Theme Setting</h3>
+                        <i class="fa-solid fa-angle-right"></i>
+                        <i class="fa-solid fa-angle-down"></i>
+                    </div>
+                    
+                    <ul class="theme-content">
+                        <li>
+                            <a href="#">Dark Mode</a>
+                            <i class="fa-solid fa-toggle-off"></i>
+                        </li>
+                    </ul>
+                    
+                </div>
+                
+            </div>
+            
+            <div class="privacy">
+                <i class="fa-solid fa-lock"></i>
+                <h3>Privacy Policy</h3>
+                <i class="fa-solid fa-angle-right"></i>
+            </div>
+
+            <div class="help_support">
+                <i class="fa-solid fa-headphones"></i>
+                <h3>Help & Support</h3>
+                <i class="fa-solid fa-angle-right"></i>
+            </div>
+
+            <div class="about">
+                <i class="fa-regular fa-circle-question"></i>
+                <h3>About</h3>
+                <i class="fa-solid fa-angle-right"></i>
+            </div>
+
+        </div>
+
+        <!-- account setting child start -->
+        <div class="account-setting-child">
+
+            <div class="account-child-head">
+                <p>Public Profile</p>
+            </div>
+
+            <div class="default-profile-details">
+
+                <div class="profile-details">
+
+                    <div class="full-name">
+                        <label for="fullname">Name</label>
+                        <input type="text" name="Full_Name" id="fullname">
+                    </div>
+
+                    <div class="user-email">
+                        <label for="useremail">Email</label>
+                        <input type="email" name="User_Email" id="useremail">
+                    </div>
+
+                    <div class="user-bio">
+                        <label for="bio">Bio</label>
+                        <textarea name="User_Bio" id="bio" style="resize: none;"></textarea>
+                    </div>
+
+                    <div class="user-social-accounts">
+                        <label for="socialaccount">Social Accounts</label>
+                        <input type="text" name="Social_Account_1" id="socialaccount1">
+                        <input type="text" name="Social_Account_2" id="socialaccount2">
+                        <input type="text" name="Social_Account_3" id="socialaccount3">
+                    </div>
+
+                    <div class="user-location">
+                        <label for="user_location">Location</label>
+                        <input type="text" name="User_Location" id="user_location">
+                    </div>
+
+                </div>
+                <div class="profile-picture-container">
+                    <p>Profile Picture</p>
+                    <div class="profile-picture">
+                        <img src="./css/utils/img/profile_avtar.avif" alt="Profile pic">
+                    </div>
+                </div>
+
+            </div>
+            <!-- account setting child end -->
+
+        </div>
+
+        <!-- Edit profile start -->
+
+        <div class="edit-profile-container">
+
+            <div class="edit-details-head">
+                <p>Edit Profile</p>
+            </div>
+
+            <div class="edit-profile-details-parent">
+
+                <div class="edit-profile-details-container">
+
+                    <div class="edit-full-name">
+                        <label for="edit_fullname">Name</label>
+                        <input type="text" name="Full_Name" id="edit_fullname">
+                    </div>
+
+                    <div class="edit-user-email">
+                        <label for="edit_useremail">Email</label>
+                        <input type="email" name="User_Email" id="edit_useremail">
+                    </div>
+
+                    <div class="edit-user-bio">
+                        <label for="edit_bio">Bio</label>
+                        <textarea name="User_Bio" id="edit_bio" style="resize: none;"></textarea>
+                    </div>
+
+                    <div class="edit-user-location">
+                        <label for="edit_user_location">Location</label>
+                        <input type="text" name="User_Location" id="edit_user_location">
+                    </div>
+
+                </div>
+
+                <div class="edit-profile-picture-container">
+                    <p>Profile Picture</p>
+                    <div class="edit-profile-picture">
+                        <img src="./css/utils/img/profile_avtar.avif" alt="Profile Pic">
+                    </div>
+                    <input type="file" name="User_Profile" id="profile_picture">
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Edit profile end -->
+
+        <!-- Change password start -->
+
+        <div class="change-pass-parent">
+
+            <div class="change-pass-head">
+                <p>Change Password</p>
+            </div>
+
+            <div class="change-pass-content">
+
+                <div class="old-pass">
+                    <label for="old_pass">Old Password</label>
+                    <div>
+                        <input type="password" name="Old_Pass" id="old_pass">
+                        <i class="fa-regular fa-eye" id="togglePassword"></i>
+                    </div>
+                </div>
+
+                <div class="new-pass">
+                    <label for="new_pass">New Password</label>
+                    <div>
+                        <input type="password" name="New_Pass" id="new_pass">
+                        <i class="fa-regular fa-eye" id="togglePassword"></i>
+                    </div>
+                </div>
+
+                <div class="pass-indication">
+                    <p>Password must have</p>
+                    <ul>
+                        <li>Minimum characters 8</li>
+                        <li>One uppercase character</li>
+                        <li>One lowercase character</li>
+                        <li>One special character</li>
+                        <li>One number</li>
+                    </ul>
+                </div>
+
+                <div class="confirm-pass">
+                    <label for="confirm_pass">Confirm New Password</label>
+                    <div>
+                        <input type="password" name="Confirm_Pass" id="confirm_pass">
+                        <i class="fa-regular fa-eye" id="togglePassword"></i>
+                    </div>
+                </div>
+
+                <div class="change-pass-btn">
+                    <button type="button">Change Password</button>
+                </div>
+
+                <div class="forget-pass">
+                    <a href="#">Forgot Password?</a>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Change password end -->
+
+        <!-- Two-Factor Authentication start -->
+
+        <!-- Two-Factor login start -->
+        <div class="two-factor-login">
+            <div class="two-factor-login-container">
+                <div class="login-heading">
+                    <h1>Login</h1>
+                    <p>To set up Two-Factor Authentication (2FA), please login your account. </p>
+                </div>
+                <div class="email">
+                    <label for="email">Email</label>
+                    <input type="email" name="User_Email" id="email" placeholder="Enter your email">
+                </div>
+                <div class="password">
+                    <label for="password">Password</label>
+                    <input type="password" name="User_Password" id="password" placeholder="Enter your password">
+                </div>
+                <div class="login-btn">
+                    <button type="button" class="factor-login-btn">Login</button>
+                </div>
+            </div>
+        </div>
+        <!-- Two-Factor login end -->
+
+        <!-- Two-Factor OTP start -->
+        <div class="two-factor-otp">
+            <div class="two-factor-otp-container">
+                <div class="otp-heading">
+                    <h1>Two-Factor Authentication</h1>
+                    <p>Enter the 6-digits code sent to your email</p>
+                </div>
+                <div class="otp-code">
+                    <label for="otp">OTP Code</label>
+                    <input type="tel" name="Enter_OTP" id="otp" placeholder="Enter OTP">
+                </div>
+                <div class="otp-btn">
+                    <button type="button" class="otp-verify-btn">Verify</button>
+                    <p>Didn't receive code? <a href="#">Resend</a></p>
+                </div>
+            </div>
+
+        </div>
+        <!-- Two-Factor OTP end -->
+
+        <!-- Two-Factor successfull meassage start -->
+        <div class="two-factor-success-msg">
+            <div class="factor-success-msg-container">
+                <h2>🎉 Two-Factor Authentication Enabled</h2>
+                <p>Your account is now secured with 2FA.</p>
+                <a href="#">
+                    <button type="button">Go to Dashboard</button>
+                </a>
+            </div>
+        </div>
+        <!-- Two-Factor successfull meassage start -->
+
+        <!-- Two-Factor Authentication end -->
+
+        <!-- Privacy Policy start -->
+
+        <div class="privacy-parent-container">
+            <div class="privacy-heading">
+                <h1>Privacy Policy</h1>
+                <div class="privacy-dates">
+                    <p>Effective Date : 03-08-2025</p>
+                    <p>Last Updated : 03-08-2025</p>
+                </div>
+                <p>Welcome to <span>Time Wise</span>. Your privacy is important to us. This Privacy Policy explains how we collect,
+                    use, disclose, and safeguard your information when you visit and use our <span>Time Wise
+                        platform</span>.</p>
+            </div>
+            <div class="privacy-details">
+                <ol>
+                    <li class="data-info">
+                        <h2>Information We Collect</h2>
+                        <p>We may collect the following types fo information:</p>
+                        <ol type="a">
+                            <li>
+                                <h4>Personal Information</h4>
+                                <ul>
+                                    <li>Full Name</li>
+                                    <li>Email Address</li>
+                                    <li>Phone Number</li>
+                                    <li>Employee ID</li>
+                                    <li>Account login credentials</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h4>Work Activity Data</h4>
+                                <ul>
+                                    <li>Check-in and check-out times</li>
+                                    <li>Total hours worked</li>
+                                    <li>Attendance status (e.g., full day, half day)</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h4>Technical and Usage Data</h4>
+                                <ul>
+                                    <li>IP Address</li>
+                                    <li>Browser and device information</li>
+                                    <li>Log files and usage patterns</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                    <li class="use-info">
+                        <h2>How We Use Your Informationn</h2>
+                        <p>We use the inforamtion we collect for the following purpose:</p>
+                        <ul>
+                            <li>To create and manage user accounts</li>
+                            <li>To track employee attendance and work hours</li>
+                            <li>To improve our platform's performance and user experience</li>
+                            <li>To send notifications or important updates</li>
+                            <li>To ensure the security of our platform</li>
+                        </ul>
+                    </li>
+                    <li class="cookies-tracking">
+                        <h2>Cookies and Tracking Technologies</h2>
+                        <p>We may use cookies and similar tracking technologies to enhance your browsing experience and
+                            analyze platform performance. You can manage your cookie preferences through your browser
+                            settings.</p>
+                    </li>
+                    <li class="sharing-info">
+                        <h2>Sharing og Information</h2>
+                        <p>We do not sell your personal data. However, we may share your information in the following
+                            cases:</p>
+                        <ul>
+                            <li>With service providers (e.g., cloud storage, analytics)</li>
+                            <li>To comply with legal obligations or enforce our policies</li>
+                            <li>In the event of a business transfer (merger, acquisition, etc.)</li>
+                        </ul>
+                    </li>
+                    <li class="data-security">
+                        <h2>Data Security</h2>
+                        <p>We implement reasonable security measures, including encryption and secure servers, to
+                            protect your information. However no system is completely secure, so we cannot guarantee
+                            100% protection</p>
+                    </li>
+                    <li class="rights">
+                        <h2>Your Rights</h2>
+                        <p>You have the right to:</p>
+                        <ul>
+                            <li>Access and update your personal data</li>
+                            <li>Delete your account</li>
+                            <li>Request correction of inaccurate data</li>
+                            <li>Withdraw consent (where applicable)</li>
+                        </ul>
+                        <p>To make any of these requests, please contact us at <a href="#">timewise@gmail.com</a></p>
+                    </li>
+                    <li class="data-retention">
+                        <h2>Data Retention</h2>
+                        <p>We retain your information for as long as your account is active or as needed to provide our
+                            services and comply with legal obligations.</p>
+                    </li>
+                    <li class="child-privacy">
+                        <h2>Children's Privacy</h2>
+                        <p>Our platform is not intended for individuals under the age of 18. We do not knowingly collect
+                            personal data from children.</p>
+                    </li>
+                    <li class="change-privacy">
+                        <h2>Changes to This Policy</h2>
+                        <p>We may update this Privacy Policy occasionally. Changes will be posted on this page and the
+                            date of the latest revision will be updated above. We recommend reviewing this policy
+                            periodically.</p>
+                    </li>
+                    <li class="contact-us">
+                        <h2>Contact Us</h2>
+                        <p>If you have questions or concerns about this Privacy Policy, please contact us at:</p>
+                        <address>
+                            <p>Email : <a href="#">timewise@gmail.com</a></p>
+                        </address>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Privacy Policy end -->
+
+        <!-- Help & Support start -->
+
+        <div class="help-support-parent">
+            <div class="help-heading">
+                <h1>Help & Support</h1>
+                <h2>Welcome to Help & Support</h2>
+                <p>Thank you for using <i>TIME WISE</i>. This page is here to guide you through common questions, usage instructions, and ways to get help quickly. Whether you're checking in for work or managing your account, we're here to support you.</p>
+            </div>
+            <div class="help-details">
+                <ol>
+                    <li class="faq">
+                        <h4>Frequently Asked Questions (FAQs)</h4>
+                        <ul>
+                            <li>
+                                <h4>Account & Login</h4>
+                                <ul>
+                                    <li>
+                                        <h6>How do I create an account?</h6>
+                                        <p>Go to the signup page, enter your details, and click register.</p>
+                                    </li>
+                                    <li>
+                                        <h6>I forgot my password. How can i reset it?</h6>
+                                        <p>Use the "Forgot Password?" link on the login page to reset it.</p>
+                                    </li>
+                                    <li>
+                                        <h6>How do I chnage my email or profile info?</h6>
+                                        <p>Go to the profile / settings section after logging in.</p>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h4>Check-in / Check-Out</h4>
+                                <ul>
+                                    <li>
+                                        <h6>How do I check in and check out?</h6>
+                                        <p>After logging in, use the "Check In" and "Check Out" buttons on your dashboard.</p>
+                                    </li>
+                                    <li>
+                                        <h6>What does "Half Day" mean?</h6>
+                                        <p>If you check out before 5:00 PM (the end of the shift), your status may be marked as "Half Day"</p>
+                                    </li>
+                                    <li>
+                                        <h6>Can I check in late?</h6>
+                                        <p>Yes, but your status may show "Late" depending on your company's rules.</p>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h4>Attendance & Reports</h4>
+                                <ul>
+                                    <li>
+                                        <h6>How can I view my attendance report?</h6>
+                                        <p>Go to the "Reports" or "Attendance" section in your account.</p>
+                                    </li>
+                                    <li>
+                                        <h6>Can I download my attendance data?</h6>
+                                        <p>Yes, there's a download button available in the report section.</p>
+                                    </li>
+                                    <li>
+                                        <h6>Who can see my check-in data?</h6>
+                                        <p>Only you and authorized admins.</p>
+                                    </li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li class="user-guide">
+                        <h4>User Guides</h4>
+                        <p><i>Comming Soon :</i> Visual walkthroughs of the platform's features.</p>
+                        <p>We'll soon provide step-by-step guides for :</p>
+                        <ul>
+                            <li>Creating an account</li>
+                            <li>Using the check-in system</li>
+                            <li>Viewing and understanding your report</li>
+                        </ul>
+                    </li>
+                    <li class="help">
+                        <h4>Need Help? Contact Us</h4>
+                        <p>If your question wasn't answered above, please reach out using the options below :</p>
+                        <ul>
+                            <li>
+                                <address><span>&#9993; </span>Email Support : send your query to <a href="#">timewise@gmail.com</a></address>
+                            </li>
+                            <li>
+                                <address><span>&#128222; </span>Phone Support : Call us at <a href="#">+91 XXXXXXXXXX </a>, available Monday to Friday, 10 AM to 6 PM.</address>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="feedback">
+                        <h4>Feedback & Suggestions</h4>
+                        <div>
+                            <p>We value your input!</p>
+                            <p>If you have an idea to improve the site or found a bug, please email us at : <a href="#">timewise@gmail.com</a></p>
+                        </div>
+                    </li>
+                    <li class="submit-request">
+                        <h4>Submit a Help Request</h4>
+                        <p>If you're facing an issue :</p>
+                        <ul>
+                            <li>Go to the "Help Form" page</li>
+                            <li>Fill in your name, email, and describe the issue.</li>
+                            <li>Attach a screenshot</li>
+                            <li>Click Submit</li>
+                        </ul>
+                        <p>Our team will respond within 24-48 business hours.</p>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Help & Support start -->
+
+    </div>
+</body>
+
+</html>

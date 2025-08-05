@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Dancing+Script:wght@400..700&family=Edu+NSW+ACT+Cursive:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Pacifico&family=Playwrite+HU:wght@100..400&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+body {
+  font-family: "Inter", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 20px 50px;
+  height: 90vh;
+}
+#modal {
+  background-color: whitesmoke;
+  width: 600px;
+  max-width: 100%;
+  border-radius: 17px;
+  padding: 30px 0;
+  display: none;
+}
+#modal.show {
+  display: inline-block;
+}
+#modal_container {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  pointer-events: none;
+}
+#countdown {
+  text-align: center;
+  font-size: larger;
+  font-weight: 600;
+  letter-spacing: 3px;
+  pointer-events: none;
+}
+#modal_container > img {
+  width: 60px;
+  height: 60px;
+  padding: 10px;
+  object-fit: contain;
+  border: 3px solid;
+  border-radius: 50%;
+}
+h4 {
+  font-size: larger;
+}
+h5 {
+  font-size: larger;
+  margin-top: 5px;
+}
+button {
+  background-color: transparent;
+  padding: 10px;
+  border-radius: 10px;
+  border: 3px solid;
+  font-size: larger;
+  font-weight: 600;
+  cursor: pointer;
+}

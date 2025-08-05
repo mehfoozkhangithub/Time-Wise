@@ -2,7 +2,7 @@ export const navbar = () => {
   return `
         <nav class="navbar-container">
             <div class="logo">
-            <img src="../frontend/css/Time_Wise_Logo(Dark Mode) (1).svg" alt="Logo">
+            <img src="../frontend/css/utils/Logos/Time_Wise_Logo_DarkMode.svg" alt="Logo">
         </div>
             <div class="nav-list">
                 <ul>
@@ -17,9 +17,12 @@ export const navbar = () => {
                 <p>Profile</p>
             </div>
         </nav>
+        <div class="scroll_btn" onclick="scrollUp()">
+            <i class="fa-solid fa-angle-up"></i>
+        </div>
         
-    `
-}
+    `;
+};
 
 export const footer = () => {
   return `
@@ -47,8 +50,8 @@ export const footer = () => {
             </div>
             <p>Copyright &copy;2025 Time Wise</p>
         </div>
-  `
-}
+  `;
+};
 
 export const style = () => {
   return `
@@ -71,7 +74,7 @@ export const style = () => {
           display: flex;
           align-items: center;
           justify-content: center;
-          background-color: white;
+          background-color: #F9FBFC;
           transition: all 0.4s ease;
           box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
         }
@@ -91,7 +94,8 @@ export const style = () => {
           align-items: center;
           color: #ffffff;
           border-radius: 30px;
-          background-color: #1f2937;
+          background-color: #29A3E0;
+          background-color: #1F242D;
           box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
           transition: all 0.4s ease;
         }
@@ -103,13 +107,13 @@ export const style = () => {
         }
         .navbar-container .logo {
           width: 30%;
-          height: fit-content;
-          margin: 0 auto;
-          mix-blend-mode: color-dodge;
+          display: flex;
+          align-items: center;
         }
         .navbar-container .logo img {
           width: 60%;
-          height: 50px;
+          height: 65px;
+          object-fit:contain;
         }
         .nav-list {
           width: 55%;
@@ -126,7 +130,7 @@ export const style = () => {
           
         }
         .nav-list ul li a {
-        position: relative;
+          position: relative;
           list-style-type: none;
           text-decoration: none;
           color: #ffffff;
@@ -139,7 +143,7 @@ export const style = () => {
           height: 3px;
           width: 0%;
           transform: translateX(-50%);
-          background-color: #53C1F0;
+          background-color: #218FC4;
           transition: width 0.4s ease;
         }
         .nav-list ul li a:hover::before{
@@ -178,13 +182,6 @@ export const style = () => {
 
         /* scroll button end */
 
-        /* main part start */
-
-        main{
-          height: 1000px;
-        }
-        /* main part end */
-
         /* footer part start */
 
         .footer-container{
@@ -196,7 +193,10 @@ export const style = () => {
           align-items: center;
           gap: 20px;
           background-color: #1F242D;
-          color: white;
+          color: #E4E8ED;
+        }
+        .footer-container h1{
+          color: #E4E8ED;
         }
         .footer-container p{
           width: 400px;
@@ -276,6 +276,5 @@ export const style = () => {
         }
 
         /* footer part end */
-    `
-}
-
+    `;
+};

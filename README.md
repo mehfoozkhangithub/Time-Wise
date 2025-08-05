@@ -164,6 +164,18 @@ Hex: #F2A3A3
 
 Muted red for errors — blends well with soft theme.
 
-Fonts used :- 
+Fonts used :-
 Headings - Poppins
 Inner Body/Text - Inter
+
+# for dob -- for arnav
+
+const dob = document.querySelector("#dob").value; // "2000-08-04"
+const isoString = new Date(dob).toISOString();
+console.log(isoString); // "2000-08-04T00:00:00.000Z"
+
+
+
+khushi
+
+rohan gaikwad
