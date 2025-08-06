@@ -31,7 +31,7 @@
     </section>
 
 
-    <blockquote>
+    <blockquote id="daily-quote">
       “Your future is created by what you do today, not tomorrow.”
     </blockquote>
 
@@ -41,14 +41,14 @@
       <div class="card check-in">
         <h3>Today's Check-In</h3>
         <i class="fa-solid fa-alarm-clock"></i>
-        <p><strong>Not Checked In</strong></p>
+        <p>Not Checked In</p>
         <p>Waiting for check-in</p>
       </div>
 
       <div class="card hours">
         <h3>Today's Check-out</h3>
 
-        <i class="fa-solid fa-alarm-clock"></i>
+        <i class="fa-solid fa-alarm-clock" id="it"></i>
         <p>0h 0m</p>
         <p>Start your day & track</p>
       </div>
@@ -123,6 +123,82 @@
   </footer>
 
 </body>
+<!-- ...dynamic tgoughts -->
+<script>
+  const quotes = [
+   "Time is the one resource that can never be recovered. Spend it wisely on things that move you closer to your goals, not on distractions that pull you away from them.",
+
+"You don’t get more hours in a day than anyone else — but how you use your hours defines whether you build the life you want or simply watch others build theirs.",
+
+"Every minute you spend planning saves you ten in execution. Effective time management isn’t just about getting things done — it’s about doing the right things at the right time.",
+
+"If you don’t set your priorities, the world will do it for you. Learn to say no to what doesn’t matter so you can say yes to what does.",
+
+"Time will pass whether you use it well or waste it. The difference lies in whether you look back with pride or regret.",
+
+"When you value your time, others start valuing it too. Guard it like your most precious asset because it is.",
+
+"You won’t always be motivated — that’s why discipline and time habits are your true allies on the journey to success.",
+
+"Stop waiting for the perfect moment. Use the time you have now, however imperfect, to begin — because waiting kills more dreams than failure ever will.",
+
+"Time isn’t the enemy; distraction is. You don’t need more hours — you need more focus in the hours you already have.",
+
+"Big goals are achieved through small, consistent time investments. Every hour spent intentionally is a step closer to the life you envision.",
+
+"The most successful people aren't those who work the longest, but those who manage their time the smartest — aligning each action with their purpose.",
+
+"Life is a sum of all your minutes. Don’t waste them on things or people that don’t contribute to your growth.",
+
+"Your calendar reflects your priorities. If your goals aren’t in your schedule, they’re just dreams without a deadline.",
+
+"Time is a mirror of your choices. If you want to change your life, change how you spend your time.",
+
+"You’re not too busy — you just haven’t made it a priority yet. The things that matter will find space in your schedule if they truly matter.",
+
+"You can reclaim lost money, but never lost time. Treat every day like a bank account that resets at midnight — and invest every second wisely.",
+
+"The difference between who you are and who you want to be is what you do with your time every single day.",
+
+"Productivity isn’t about doing more — it’s about doing what matters most and removing what doesn’t.",
+
+"Time management is life management. Learn to control your time, and you’ll learn to master your life.",
+
+"When you manage your time with intention, you don’t just get more done — you become the person capable of achieving anything.",
+"No matter how organized your calendar is, nothing changes unless you take action. Time management isn’t about perfection — it’s about progress, consistency, and commitment.",
+
+"A busy schedule doesn't mean you're productive. True productivity comes when your time is aligned with your purpose, not just filled with tasks.",
+
+"Each day is a blank page in your life’s story. Use your time like a pen — write something worth reading.",
+
+"You don't find time for the things that matter — you make time for them. The difference between success and stagnation lies in what you make room for.",
+
+"Time has a wonderful way of showing us what really matters — if you're constantly overwhelmed, it's time to re-evaluate your priorities, not just your schedule.",
+
+"If you waste time worrying about not having enough time, you’ll waste the very thing you need to change your life.",
+
+"You can't control time, but you can control your choices. How you spend your hours determines how you shape your future.",
+
+"Time is the currency of life — be intentional about how you spend it, because every choice is a trade-off for something else.",
+
+"Every productive day starts with a clear decision: will I run my day, or will I let my day run me?",
+
+"The difference between ordinary and extraordinary isn’t talent — it’s how you spend your time when no one’s watching.",
+
+    ];
+
+    // Use the current day of the year to select a quote
+    const now = new Date();
+    const start = new Date(now.getFullYear(), 0, 0);
+    const diff = now - start;
+    const oneDay = 1000 * 60 * 60 * 24;
+    const dayOfYear = Math.floor(diff / oneDay);
+
+    const quoteIndex = dayOfYear % quotes.length;
+    document.getElementById("daily-quote").textContent = quotes[quoteIndex];
+  </script>
+  <!-- .....dynamice quotes end.... -->
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
 <script src="./js/Home.js"></script>
 <script type="module">

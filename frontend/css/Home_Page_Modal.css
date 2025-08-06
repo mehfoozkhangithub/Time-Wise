@@ -7,7 +7,7 @@ body {
   align-items: center;
   background-color: rgba(0, 0, 0, 0.2);
   padding: 20px 50px;
-  height: 90vh;
+  /* height: 90vh; */
 }
 #modal {
   background-color: whitesmoke;

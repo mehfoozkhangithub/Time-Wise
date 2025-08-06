@@ -43,7 +43,7 @@ body {
   color: var(--text-primary);
   color: var(--text-secondary);
   background: var(--bg);
-  min-height: 100vh;
+  /* min-height: 100vh; */
   line-height: 1.5;
   transition: background-color 0.3s, color 0.3s;
   /* display: grid; */
@@ -70,12 +70,15 @@ main {
 }
 
 .welcome {
-  background: #fff;
+  background:  #F9FBFC;
   padding: 20px;
   margin-bottom: 20px;
+  margin-top: 10px;
   border-left: 4px solid #007bff;
   text-align: center;
   position: relative;
+  border-radius: 12px;
+  box-shadow: 2px 2px 1px black;
 
 }
 
@@ -102,13 +105,15 @@ blockquote {
   font-style: italic;
   color: rgb(125, 21, 21);
   margin-top: 20px;
-  height: 30px;
-   background: #fff;
+  height:70px;
+   background:  #F9FBFC;
    text-align: center;
   padding: 20px;
   font-size: 17px;
   font-weight: 600;
-  box-shadow: 1px 1px 4px black;
+  box-shadow: 2px 2px 2px black;
+  border-left: 4px solid red;
+  border-radius: 12px;
 }
 
 .overview {
@@ -119,30 +124,49 @@ blockquote {
 
 .overview-head{
   text-align: center;
+  margin-top: 30px;
 }
 
 .card {
   flex: 1;
-  background: #fff;
-  padding: 15px;
+  background:  #F9FBFC;
+  padding: 13px;
+  height: 130px;
   border-left: 4px solid #28a745;
   position: relative;
+  box-shadow: 1px 1px 3px black;
 }
 
 .card i {
   position: absolute;
-  top: 21%;
-  left: 30%;
+  top: 8%;
+  left: 33%;
   font-size: 25px;
+  color: rgba(59, 15, 59, 0.93);
+}
+
+.card #it{
+  position: absolute;
+  left: 36%;
+  top: 8%;
+}
+.card p {
+  margin-top: 5px;
 }
 
 
 .top-thought {
-  background: #fff;
+  background:  #F9FBFC;
   padding: 20px;
   margin-bottom: 20px;
+  margin-top: 40px;
 }
-
+.top-thought h3{
+  font-size: 27px;
+}
+.top-thought p{
+  margin-top: 5px;
+}
 .thought-box {
   border: 1px solid #ddd;
   padding: 15px;
@@ -184,6 +208,7 @@ blockquote {
 .container {
   max-width: 1200px;
   margin: 0 auto;
+  margin-bottom: 10px;
 }
 
 h1 {
@@ -199,15 +224,18 @@ h1 {
 }
 
 .cards {
-  background-color: #fff;
+  background:  #F9FBFC;
   padding: 1.5rem;
   border-radius: 1rem;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.06);
   transition: transform 0.2s ease;
+  border: 1px solid black;
 }
 
 .cards:hover {
   transform: translateY(-5px);
+  background: rgba(15, 149, 211, 0.988);
+    border: 2px solid black;
 }
 
 .icon {
@@ -267,6 +295,9 @@ h1 {
   font-size: 2rem;
   margin-bottom: 10px;
   color: var(--accent-color);
+  position: absolute;
+  top: 15%;
+  left: 41%;
 }
 
 #break-button {
