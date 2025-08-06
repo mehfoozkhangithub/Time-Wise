@@ -11,14 +11,20 @@ body {
   margin: auto;
   padding: 2rem;
   line-height: 1.6;
-  position: relative;
+ 
 }
 
 
 header {
   text-align: center;
   margin-bottom: 2rem;
-}
+  position: absolute;
+  top: 10%;
+  left: 15%;
+  
+  
+  }
+ 
 
 .logo {
   width: 100%;
@@ -28,19 +34,32 @@ header {
   background-size: cover;
   opacity: 0.5;
   
- 
+ position: relative;
 }
 
 .motto {
-  font-size: 1.5rem;
+  font-size: 27px;
   font-weight: 600;
-  color: #555;
-  position: absolute;
-  top: 10%;
+  
+ 
 }
 
 section {
   margin-bottom: 2.5rem;
+}
+
+.about p{
+  position: absolute;
+  top: 18%;
+  width: 700px;
+  left: 30%;
+  text-align: center;
+  border: 2px solid black;
+  background: rgb(36, 13, 51);
+  color: white;
+  /* background: transparent; */
+  font-size: 18px;
+  padding: 9px;
 }
 
 h2 {
