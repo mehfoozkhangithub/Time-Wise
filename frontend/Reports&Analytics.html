@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TimeWise</title>
+  <!-- CSS Link -->
+  <link rel="stylesheet" href="css/Reports&Analytics.css">
+  <!-- Font Awesom CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <!-- Poppins/Inter CDN -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;600&display=swap"
+    rel="stylesheet" />
+  <!-- Moment.js CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+  <div class="reports_head">
+    <div class="report_heading_text">
+      <h1>Reports & Analytics</h1>
+    </div>
+
+    <div class="view_div">
+      <button type="button" class="user_view">User View</button>
+      <button type="button" class="admin_view">Admin View</button>
+    </div>
+  </div>
+
+  <div class="reports_head_2">
+    <p>Insights into your productivity patterns and team performance</p>
+    <p>Date as of :- <span id="current-date"> </span></p>
+  </div>
+
+  <div class="custom_dropdown">
+    <button class="dropdown_toggle">
+      <span class="selected_option">Last 7 Days</span>
+      <i class="fa-solid fa-chevron-down dropdown_icon"></i>
+    </button>
+    <div class="dropdown_options">
+      <div class="dropdown_option active" data-value="7">Last 7 Days</div>
+      <div class="dropdown_option" data-value="30">Last 30 Days</div>
+      <div class="dropdown_option" data-value="90">Last 90 Days</div>
+    </div>
+    <input type="hidden" name="days_selector" id="days_selection" value="7">
+  </div>
+
+  <div class="reports_head_cards">
+    <div class="total_hours">
+      <div class="th_clock"><i class="fa-solid fa-clock"></i></div>
+      <div class="total_hours_text">
+        <h2>Total Hours</h2>
+        <p>156.5h</p>
+      </div>
+    </div>
+
+    <div class="avg_daily">
+      <div class="ad_stats"><i class="fa-solid fa-chart-column"></i></div>
+      <div class="ad_daily_text">
+        <h2>Avg Daily</h2>
+        <p>7.2h</p>
+      </div>
+    </div>
+
+    <div class="punctuality">
+      <div class="punctuality_user"><i class="fa-solid fa-users"></i></div>
+      <div class="punctuality_text">
+        <h2>Punctuality</h2>
+        <p>94%</p>
+      </div>
+    </div>
+
+    <div class="active_days">
+      <div class="active_days_icon"><i class="fa-solid fa-fire"></i></div>
+      <div class="active_days_text">
+        <h2>Active Days</h2>
+        <p>22/30</p>
+      </div>
+    </div>
+  </div>
+
+<div class="chart-wrapper">
+  <div class="bar_diagram">
+    <canvas id="workHoursChart"></canvas>
+  </div>
+</div>
+
+</body>
+<script src="js/Reports&Analytics.js"></script>
+
+</html>

@@ -1,0 +1,367 @@
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+DK+Loopet:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* ============================
+   THEME COLOR VARIABLES
+============================= */
+:root {
+  --bg: #F9FBFC;
+  --surface: #EEF3F7;
+  --primary: #29A3E0;
+  --primary-hover: #218FC4;
+  --secondary: #D4EBF7;
+  --text-primary: #2C2F3A;
+  --text-secondary: #6E7A88;
+  --border: #D6DDE3;
+  --success: #A9D6C2;
+  --error: #F2A3A3;
+}
+
+body.dark-mode {
+  --bg: #1F242D;
+  --surface: #2A2F3A;
+  --primary: #3EB5E8;
+  --primary-hover: #53C1F0;
+  --secondary: #8AD5F2;
+  --text-primary: #E4E8ED;
+  --text-secondary: #A2ACB8;
+  --border: #3B4251;
+  --success: #81E6C3;
+  --error: #F17C7C;
+}
+
+/* ============================
+   GLOBAL STYLES
+============================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--text-primary);
+  color: var(--text-secondary);
+  background: var(--bg);
+  min-height: 100vh;
+  line-height: 1.5;
+  transition: background-color 0.3s, color 0.3s;
+  /* display: grid;
+  grid-template-areas: "navbar" "main";
+  grid-template-rows: auto 1fr; */
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+
+/* Report Head */
+
+.reports_head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1.5em;
+}
+
+.report_heading_text > h1 {
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.view_div {
+  display: flex;
+  gap: 15px;
+  padding: 1.8em;
+}
+
+/* Report Head Buttons */
+
+.user_view, .admin_view {
+  padding: 0.9em 1.5em;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* User View Button (Primary) */
+.user_view {
+  background: #29A3E0; /* Vibrant blue */
+  color: white;
+}
+
+.user_view:hover {
+  transform: translateY(-3px) scale(1.05);
+  background: #2393CA; /* Slightly darker blue */
+  box-shadow: 0 4px 8px rgba(41, 163, 224, 0.3);
+}
+
+.user_view:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: 0 1px 2px rgba(41, 163, 224, 0.2);
+}
+
+/* Admin View Button (Alert/Caution) */
+.admin_view {
+  background: #F2A3A3; /* Soft red/pink */
+  color: #D62C1A; /* Dark red text for contrast */
+}
+
+.admin_view:hover {
+  transform: translateY(-3px) scale(1.05);
+  background: #DA9393; /* Darker pink */
+  box-shadow: 0 4px 8px rgba(242, 163, 163, 0.3);
+}
+
+.admin_view:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: 0 1px 2px rgba(242, 163, 163, 0.2);
+}
+
+/* Optional: Add icons using Font Awesome */
+.user_view::before {
+  content: "\f007"; /* User icon */
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+}
+
+.admin_view::before {
+  content: "\f085"; /* Admin (cog) icon */
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+}
+
+/* Reports Head 2 starts */
+
+div.reports_head_2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: -2.5em 5.5em 1.5em 1.5em;;
+}
+
+.reports_head_2 > p {
+  font-size: 18px;
+}
+
+/* Filter Div */
+
+.custom_dropdown {
+  position: relative;
+  width: 200px;
+  font-family: inherit;
+  margin: 10px 25px;
+}
+
+.dropdown_toggle {
+  width: 100%;
+  padding: 0.8em 1em;
+  border-radius: 8px;
+  border: 2px solid var(--border);
+  background: var(--surface);
+  color: var(--text_primary);
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.dropdown_toggle:hover {
+  border-color: var(--primary);
+  background: var(--bg);
+}
+
+.dropdown_icon {
+  transition: transform 0.3s ease;
+  color: var(--text_secondary);
+}
+
+.dropdown_options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: var(--surface);
+  border-radius: 8px;
+  border: 2px solid var(--border);
+  margin-top: 5px;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 10;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown_option {
+  padding: 0.8em 1em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: var(--text_primary);
+}
+
+.dropdown_option:hover {
+  background: var(--secondary);
+}
+
+.dropdown_option.active {
+  background: var(--primary);
+  color: white;
+}
+
+/* When dropdown is open */
+.custom_dropdown.active .dropdown_options {
+  max-height: 300px;
+  opacity: 1;
+  visibility: visible;
+}
+
+.custom_dropdown.active .dropdown_icon {
+  transform: rotate(180deg);
+  color: var(--primary);
+}
+
+/* Dark mode support */
+body.dark_mode .dropdown_options {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+body.dark_mode .dropdown_option:hover {
+  background: var(--bg);
+}
+
+/* Report Head Cards */
+
+.reports_head_cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  padding: 1rem;
+  width: 100%;
+  overflow-x: auto;
+   align-items: stretch;
+}
+
+/* Card common styles */
+.total_hours,
+.avg_daily,
+.punctuality,
+.active_days {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  min-width: 200px;
+  gap: 20px;
+   transition: all 0.3s ease;
+}
+
+.total_hours:hover,
+.avg_daily:hover,
+.punctuality:hover,
+.active_days:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12); /
+}
+
+/* Icon styles */
+.th_clock,
+.ad_stats,
+.punctuality_user {
+  font-size: 1.8rem;
+  margin-right: 1rem;
+  color: #29A3E0;
+}
+
+/* Text styles */
+.total_hours_text h2,
+.ad_daily_text h2,
+.punctuality_text h2,
+.active_days_text h2 {
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.total_hours_text p,
+.ad_daily_text p,
+.punctuality_text p,
+.active_days_text p {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+/* FA Colours */
+
+.th_clock i.fa-clock {
+  color: #29A3E0;
+  background: linear-gradient(135deg, #29A3E0, #1D83B4);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+
+.ad_stats i.fa-chart-column {
+  color: #27AE60;
+  background: linear-gradient(135deg, #27AE60, #219955);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.punctuality_user i.fa-users {
+  color: #8E44AD;
+  background: linear-gradient(135deg, #8E44AD, #7D3C98);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.active_days i.fa-fire {
+  color: #E74C3C;
+  background: linear-gradient(135deg, #E74C3C, #D62C1A);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-size: 30px;
+}
+
+/* Bar Chart */
+
+.chart-wrapper {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  padding: 20px;
+}
+
+.bar_diagram {
+  background-color: var(--surface);
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: 400px;
+  width: 100%;
+  max-width: 800px;
+}

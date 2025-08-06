@@ -130,6 +130,7 @@ body.sidebar-open .navbar_dashbaord {
 .sidebar-item:nth-child(2) i { color: var(--primary); }
 .sidebar-item:nth-child(3) i { color: #50CD89; }
 .sidebar-item:nth-child(4) i { color: #F1416C; }
+.sidebar-item:nth-child(5) i { color: #7239EA;}
 
 /* ============================
    NAVBAR
