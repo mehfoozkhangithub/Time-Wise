@@ -234,7 +234,7 @@ h1 {
 
 .cards:hover {
   transform: translateY(-5px);
-  background: rgba(15, 149, 211, 0.988);
+  background: rgba(7, 142, 204, 0.988);
     border: 2px solid black;
 }
 
