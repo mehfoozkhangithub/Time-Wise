@@ -13,33 +13,36 @@ let appearanceParent = document.querySelector(".appearance-parent");
 let appearanceArrowDown = appearanceParent.querySelector(".fa-angle-down");
 let appearanceArrowRight = appearanceParent.querySelector(".fa-angle-right");
 
-let themeParent = document.querySelector(".theme")
-let openThemeSetting = document.querySelector(".theme-parent");
-let themeContent = document.querySelector(".theme-content");
-let themeArrowDown = openThemeSetting.querySelector(".fa-angle-down");
-let themeArrowRight = openThemeSetting.querySelector(".fa-angle-right");
-
-let accountSettingChild = document.querySelector(".account-setting-child");
-
 let editProfileBtn = document.querySelector(".edit-profile");
 
-let editProfileContainer = document.querySelector(".edit-profile-container");
-
 let changePass = document.querySelector(".change-pass");
-let changePassParent = document.querySelector(".change-pass-parent");
 
 let twoFactor = document.querySelector(".two-factor");
-let factorLogin = document.querySelector(".two-factor-login");
 let factorLoginbtn = document.querySelector(".factor-login-btn");
-let factorOtpPage = document.querySelector(".two-factor-otp");
 let factorOtpVerifyBtn = document.querySelector(".otp-verify-btn");
-let factorSuccessMsg = document.querySelector(".two-factor-success-msg");
 
 let privacyBtn = document.querySelector(".privacy");
-let privacyContainer = document.querySelector(".privacy-parent-container");
 
 let helpBtn = document.querySelector(".help_support");
-let helpParent = document.querySelector(".help-support-parent");
+
+let aboutBtn = document.querySelector(".about-parent");
+let aboutContent = document.querySelector(".about-content");
+let aboutArrowRight = aboutBtn.querySelector(".fa-angle-right");
+let aboutArrowDown = aboutBtn.querySelector(".fa-angle-down");
+
+
+// Hide All section, Only show clicked content
+function hideAllSections() {
+    document.querySelector(".account-setting-child").style.display = "none";
+    document.querySelector(".edit-profile-container").style.display = "none";
+    document.querySelector(".change-pass-parent").style.display = "none";
+    document.querySelector(".two-factor-login").style.display = "none";
+    document.querySelector(".two-factor-otp").style.display = "none";
+    document.querySelector(".two-factor-success-msg").style.display = "none";
+    document.querySelector(".privacy-parent-container").style.display = "none";
+    document.querySelector(".help-support-parent").style.display = "none";
+    document.querySelector(".appearance-container").style.display = "none";
+}
 
 
 // ACCOUNT SETTING
@@ -48,76 +51,58 @@ let isAccountSettingOpen = false;
 
 openAccountSetting.addEventListener("click", () => {
     if (!isAccountSettingOpen) {
+        hideAllSections();
         accountContent.classList.add("open-account-content");
         accountArrowDown.style.display = "flex";
         accountArrowRight.style.display = "none";
-        accountSettingChild.style.display = "flex";
+        document.querySelector(".account-setting-child").style.display = "flex";
 
-        editProfileContainer.style.display= "none";
-        changePassParent.style.display = "none";
-        factorLogin.style.display = "none";
-        factorOtpPage.style.display = "none";
-        factorSuccessMsg.style.display = "none";
-        privacyContainer.style.display = "none";
-        helpParent.style.display = "none";        
 
         isAccountSettingOpen = true;
-    } 
+    }
     else {
+        hideAllSections();
         accountContent.classList.remove("open-account-content");
         accountArrowDown.style.display = "none";
         accountArrowRight.style.display = "flex";
-        accountSettingChild.style.display = "flex";
+        document.querySelector(".account-setting-child").style.display = "flex";
 
-        editProfileContainer.style.display= "none";
-        changePassParent.style.display = "none";
-        factorLogin.style.display = "none";
-        factorOtpPage.style.display = "none";
-        factorSuccessMsg.style.display = "none";
-        privacyContainer.style.display = "none";
-        helpParent.style.display= "none";
 
         isAccountSettingOpen = false;
     }
 });
 
-// APPEARANCE SETTING
+// APPEARANCE SETTING & Theme
 
-let isAppearance = false;
 
 appearanceParent.addEventListener("click", () => {
-    if(!isAppearance){
-        appearanceArrowDown.style.display = "block";
-        appearanceArrowRight.style.display = "none";
-        themeParent.style.display = "flex";
-        isAppearance = true;
-    }
-    else{
-        appearanceArrowDown.style.display = "none";
-        appearanceArrowRight.style.display = "block";
-        themeParent.style.display = "none";
-        isAppearance = false;
-    }
+    hideAllSections();
+    document.querySelector(".appearance-container").style.display = "flex";
 })
 
 
-// THEME SETTING
+const spans = document.querySelectorAll('.light-theme-colors > span');
+const lightBox = document.querySelector('.light-left > div');
+const lightBoxSpan = document.querySelector(".light-left > div > span")
 
-let isThemeOpen = false;
+// Define the colors for each Box
+const BoxColors = ["#bcebc9", "#acd6fc", "#acd6fc", "#30563f", "#5c4c2b", "#6e3b42", "#32433d"];
 
-openThemeSetting.addEventListener("click", () => {
-    if (!isThemeOpen) {
-        themeContent.classList.add("open-theme-content");
-        themeArrowDown.style.display = "flex";
-        themeArrowRight.style.display = "none";
-        isThemeOpen = true;
-    } else {
-        themeContent.classList.remove("open-theme-content");
-        themeArrowDown.style.display = "none";
-        themeArrowRight.style.display = "flex";
-        isThemeOpen = false;
-    }
+// Define the colors for each BoxSpan
+const BoxSpanColors = ["#37cf56", "#0089ff", "#0089ff", "#41ba52", "#b07d1a", "#f7464a", "#4d8b51"]
+
+spans.forEach((span, index) => {
+    span.addEventListener('mouseenter', () => {
+        lightBox.style.backgroundColor = BoxColors[index];
+        lightBoxSpan.style.backgroundColor = BoxSpanColors[index];
+    });
+
+    span.addEventListener('mouseleave', () => {
+        lightBox.style.backgroundColor = ''; // reset to default
+        lightBoxSpan.style.backgroundColor = ''; // reset to default
+    });
 });
+
 
 // NOTISFICATION SETTING
 
@@ -140,67 +125,67 @@ openNoticeSetting.addEventListener("click", () => {
 // Displaying edit profile by clicking edit profile button
 
 editProfileBtn.addEventListener("click", () => {
-    editProfileContainer.style.display= "flex"
-    accountSettingChild.style.display = "none";
-        changePassParent.style.display = "none";
-        factorLogin.style.display = "none";
-        privacyContainer.style.display= "none";
-        helpParent.style.display= "none";
+    hideAllSections();
+    document.querySelector(".edit-profile-container").style.display = "flex"
 });
 
 // Change password
 
 changePass.addEventListener("click", () => {
-    changePassParent.style.display = "flex";
-    accountSettingChild.style.display = "none";
-    editProfileContainer.style.display= "none";
-    factorLogin.style.display = "none";
-    privacyContainer.style.display= "none";
-    helpParent.style.display= "none";
+    hideAllSections();
+    document.querySelector(".change-pass-parent").style.display = "flex";
 })
 
 
 // Two-Factor Authentication
 
 twoFactor.addEventListener("click", () => {
-    factorLogin.style.display = "flex";
-    accountSettingChild.style.display = "none";
-    editProfileContainer.style.display= "none";
-    changePassParent.style.display = "none";
-    privacyContainer.style.display= "none";
-    helpParent.style.display= "none";
+    hideAllSections();
+    document.querySelector(".two-factor-login").style.display = "flex";
 })
 
 factorLoginbtn.addEventListener("click", () => {
-    factorOtpPage.style.display = "flex";
-    factorLogin.style.display = "none";
+    document.querySelector(".two-factor-otp").style.display = "flex";
+    document.querySelector(".two-factor-login").style.display = "none";
 })
 
 factorOtpVerifyBtn.addEventListener("click", () => {
-    factorSuccessMsg.style.display = "flex";
-    factorOtpPage.style.display = "none";
+    document.querySelector(".two-factor-success-msg").style.display = "flex";
+    document.querySelector(".two-factor-otp").style.display = "none";
 })
 
 
 // Privacy Policy
 
 privacyBtn.addEventListener("click", () => {
-    privacyContainer.style.display= "flex";
-    accountSettingChild.style.display = "none";
-    editProfileContainer.style.display= "none";
-    factorLogin.style.display = "none";
-    changePassParent.style.display = "none";
-    helpParent.style.display= "none";
+    hideAllSections();
+    document.querySelector(".privacy-parent-container").style.display = "flex";
 
 });
 
 // Help & Support
 
 helpBtn.addEventListener("click", () => {
-    helpParent.style.display= "flex";
-    accountSettingChild.style.display = "none";
-    editProfileContainer.style.display= "none";
-    factorLogin.style.display = "none";
-    changePassParent.style.display = "none";
-    privacyContainer.style.display= "none";
-})
+    hideAllSections();
+    document.querySelector(".help-support-parent").style.display = "flex";
+});
+
+// About
+
+let isAboutOpen = false;
+
+aboutBtn.addEventListener("click", () => {
+    if (!isAboutOpen) {
+        aboutContent.classList.add("open-about-content");
+        aboutArrowDown.style.display = "block";
+        aboutArrowRight.style.display = "none"
+        isAboutOpen = true;
+    }
+    else {
+        aboutContent.classList.remove("open-about-content");
+        aboutArrowDown.style.display = "none";
+        aboutArrowRight.style.display = "block"
+        isAboutOpen = false;
+    }
+});
+

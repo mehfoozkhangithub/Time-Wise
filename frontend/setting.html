@@ -77,41 +77,30 @@
                     <i class="fa-solid fa-angle-down"></i>
                 </div>
 
-                <div class="theme">
-
-                    <div class="theme-parent">
-                        <h3>Theme Setting</h3>
-                        <i class="fa-solid fa-angle-right"></i>
-                        <i class="fa-solid fa-angle-down"></i>
-                    </div>
-                    
-                    <ul class="theme-content">
-                        <li>
-                            <a href="#">Dark Mode</a>
-                            <i class="fa-solid fa-toggle-off"></i>
-                        </li>
-                    </ul>
-                    
-                </div>
-                
-            </div>
-            
-            <div class="privacy">
-                <i class="fa-solid fa-lock"></i>
-                <h3>Privacy Policy</h3>
-                <i class="fa-solid fa-angle-right"></i>
             </div>
 
-            <div class="help_support">
-                <i class="fa-solid fa-headphones"></i>
-                <h3>Help & Support</h3>
-                <i class="fa-solid fa-angle-right"></i>
-            </div>
 
             <div class="about">
-                <i class="fa-regular fa-circle-question"></i>
-                <h3>About</h3>
-                <i class="fa-solid fa-angle-right"></i>
+
+                <div class="about-parent">
+                    <i class="fa-regular fa-circle-question"></i>
+                    <h3>About</h3>
+                    <i class="fa-solid fa-angle-right"></i>
+                    <i class="fa-solid fa-angle-down"></i>
+                </div>
+
+                <ul class="about-content">
+                    <li class="privacy">
+                        <a href="#">Privacy Policy</a>
+                        <i class="fa-solid fa-angle-right"></i>
+                    </li>
+
+                    <li class="help_support">
+                        <a href="#">Help & Support</a>
+                        <i class="fa-solid fa-angle-right"></i>
+                    </li>
+                </ul>
+
             </div>
 
         </div>
@@ -139,7 +128,8 @@
 
                     <div class="user-bio">
                         <label for="bio">Bio</label>
-                        <textarea name="User_Bio" id="bio" style="resize: none;"></textarea>
+                        <textarea name="User_Bio" id="bio" style="resize: none;"
+                            placeholder="Write something about you"></textarea>
                     </div>
 
                     <div class="user-social-accounts">
@@ -332,6 +322,123 @@
 
         <!-- Two-Factor Authentication end -->
 
+        <!-- Appearance & Theme start -->
+
+        <div class="appearance-container">
+            <div class="appearance-heading">
+                <h1>Theme Preferences</h1>
+                <p>Choose how TIME WISE looks to you. Select a single theme, or sync with your system and automatically switch between day and night themes. Selections are applied immediately and saved automatically.</p>
+            </div>
+
+            <div class="theme-mode">
+                <p>Theme Mode</p>
+                <select name="theme-mode" id="theme_mode">
+                    <option value="Single theme">Single theme</option>
+                    <option value="Sync with system" selected>Sync with system</option>
+                </select>
+            </div>
+
+            <div class="theme-container">
+                <div class="light-theme">
+                    <div class="theme-up">
+                        <div>
+                            <i class="fas fa-sun"></i>
+                            <p>Light theme</p>
+                        </div>
+                        <button type="button">Active</button>
+                    </div>
+                    <p>This theme will be active when your system is set to “light mode”</p>
+                    <div class="theme-skeleton">
+                        <div class="skeleton-up">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <div class="skeleton-middle">
+                            <div class="left-small-color">
+                                <div></div>
+                                <div>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </div>
+
+                            <div class="light-big-color">
+                                <div class="light-left">
+                                    <div>
+                                        <span></span>
+                                    </div>
+                                </div>
+                                <div class="light-right"></div>
+                            </div>
+                        </div>
+                        <div class="light-default-color">
+                            <p>Light default</p>
+                        </div>
+                    </div>
+                    <div class="light-theme-colors">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="dark-theme">
+                    <div class="dark-theme-up">
+                        <div>
+                            <i class="fa-regular fa-moon"></i>
+                            <p>Dark theme</p>
+                        </div>
+                        <button type="button">Active</button>
+                    </div>
+                    <p>This theme will be active when your system is set to “light mode”</p>
+                    <div class="dark-theme-skeleton">
+                        <div class="dark-skeleton-up">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <div class="dark-skeleton-middle">
+                            <div class="dark-small-color">
+                                <div class="dark-color-skeleton"></div>
+                                <div>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </div>
+
+                            <div class="dark-big-color">
+                                <div class="dark-left">
+                                    <div>
+                                        <span></span>
+                                    </div>
+                                </div>
+                                <div class="dark-right"></div>
+                            </div>
+                        </div>
+                        <div class="dark-default-color">
+                            <p>Soft default</p>
+                        </div>
+                    </div>
+                    <div class="theme-colors">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Appearance & Theme end -->
+
         <!-- Privacy Policy start -->
 
         <div class="privacy-parent-container">
@@ -341,7 +448,8 @@
                     <p>Effective Date : 03-08-2025</p>
                     <p>Last Updated : 03-08-2025</p>
                 </div>
-                <p>Welcome to <span>Time Wise</span>. Your privacy is important to us. This Privacy Policy explains how we collect,
+                <p>Welcome to <span>Time Wise</span>. Your privacy is important to us. This Privacy Policy explains how
+                    we collect,
                     use, disclose, and safeguard your information when you visit and use our <span>Time Wise
                         platform</span>.</p>
             </div>
@@ -458,7 +566,9 @@
             <div class="help-heading">
                 <h1>Help & Support</h1>
                 <h2>Welcome to Help & Support</h2>
-                <p>Thank you for using <i>TIME WISE</i>. This page is here to guide you through common questions, usage instructions, and ways to get help quickly. Whether you're checking in for work or managing your account, we're here to support you.</p>
+                <p>Thank you for using <i>TIME WISE</i>. This page is here to guide you through common questions, usage
+                    instructions, and ways to get help quickly. Whether you're checking in for work or managing your
+                    account, we're here to support you.</p>
             </div>
             <div class="help-details">
                 <ol>
@@ -487,11 +597,13 @@
                                 <ul>
                                     <li>
                                         <h6>How do I check in and check out?</h6>
-                                        <p>After logging in, use the "Check In" and "Check Out" buttons on your dashboard.</p>
+                                        <p>After logging in, use the "Check In" and "Check Out" buttons on your
+                                            dashboard.</p>
                                     </li>
                                     <li>
                                         <h6>What does "Half Day" mean?</h6>
-                                        <p>If you check out before 5:00 PM (the end of the shift), your status may be marked as "Half Day"</p>
+                                        <p>If you check out before 5:00 PM (the end of the shift), your status may be
+                                            marked as "Half Day"</p>
                                     </li>
                                     <li>
                                         <h6>Can I check in late?</h6>
@@ -534,10 +646,12 @@
                         <p>If your question wasn't answered above, please reach out using the options below :</p>
                         <ul>
                             <li>
-                                <address><span>&#9993; </span>Email Support : send your query to <a href="#">timewise@gmail.com</a></address>
+                                <address><span>&#9993; </span>Email Support : send your query to <a
+                                        href="#">timewise@gmail.com</a></address>
                             </li>
                             <li>
-                                <address><span>&#128222; </span>Phone Support : Call us at <a href="#">+91 XXXXXXXXXX </a>, available Monday to Friday, 10 AM to 6 PM.</address>
+                                <address><span>&#128222; </span>Phone Support : Call us at <a href="#">+91 XXXXXXXXXX
+                                    </a>, available Monday to Friday, 10 AM to 6 PM.</address>
                             </li>
                         </ul>
                     </li>
@@ -545,17 +659,17 @@
                         <h4>Feedback & Suggestions</h4>
                         <div>
                             <p>We value your input!</p>
-                            <p>If you have an idea to improve the site or found a bug, please email us at : <a href="#">timewise@gmail.com</a></p>
+                            <p>If you have an idea to improve the site or found a bug, please email us at : <a
+                                    href="#">timewise@gmail.com</a></p>
                         </div>
                     </li>
                     <li class="submit-request">
                         <h4>Submit a Help Request</h4>
                         <p>If you're facing an issue :</p>
                         <ul>
-                            <li>Go to the "Help Form" page</li>
+                            <li>Go to the "Contact Us" page</li>
                             <li>Fill in your name, email, and describe the issue.</li>
-                            <li>Attach a screenshot</li>
-                            <li>Click Submit</li>
+                            <li>Click Send Message</li>
                         </ul>
                         <p>Our team will respond within 24-48 business hours.</p>
                     </li>

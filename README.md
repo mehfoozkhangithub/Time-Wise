@@ -11,7 +11,7 @@
 1. **_Khushi yadav_**
 1. **_Hetuk Patel_**
 1. **_siraj Ahmad_**
-1. **_Rehmat Ali_** - also build **logic part**
+1. **_Rahmat Ali_** - also build **logic part**
 
 ## **_Backend Team_**
 
