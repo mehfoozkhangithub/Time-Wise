@@ -479,7 +479,7 @@ body.dark_mode .dropdown_option:hover {
   box-shadow: 0 4px 10px rgba(0,0,0,0.06);
 }
 
-.metric_icon.total_hours { background: var(--primary); }
+.metric_icon.total_time { background: var(--primary); }
 .metric_icon.average_day { background: var(--success); }
 .metric_icon.days_missed  { background: var(--error); }
 
