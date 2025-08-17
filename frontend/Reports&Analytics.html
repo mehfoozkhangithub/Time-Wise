@@ -83,11 +83,102 @@
     </div>
   </div>
 
-<div class="chart-wrapper">
-  <div class="bar_diagram">
-    <canvas id="workHoursChart"></canvas>
-  </div>
-</div>
+  <section class="bar_chart_section">
+    <div class="bar_chart_section_head">
+    <h3>
+      Work Hours Overview
+      <span class="info-icon" data-tooltip="The total hours worked by an individual/team is shown here in a bar chart">
+        <i class="fa-solid fa-circle-info"></i>
+      </span>
+    </h3>
+      <div class="toggle-container">
+        <button class="toggle-btn active" id="weeklyBtn">Weekly</button>
+        <button class="toggle-btn" id="monthlyBtn">Monthly</button>
+      </div>
+    </div>
+
+    <!-- Metrics -->
+    <div class="bar_chart_metrics">
+
+      <div class="metric_card">
+        <div class="metric_icon total_hours"><i class="fa-solid fa-stopwatch"></i></div>
+        <p>Total Hours</p>
+        <h4 id="totalHours">42.7H</h4>
+      </div>
+
+      <div class="metric_card">
+        <div class="metric_icon average_day"><i class="fa-solid fa-chart-line"></i></div>
+        <p>Average per Day</p>
+        <h4 id="avgPerDay">6.1H</h4>
+      </div>
+
+      <div class="metric_card">
+        <div class="metric_icon days_missed"><i class="fa-solid fa-calendar-xmark"></i></div>
+        <p>Days Missed</p>
+        <h4 id="daysMissed">1</h4>
+      </div>
+    </div>
+
+    <!-- Chart -->
+    <div class="chart-wrapper">
+        <canvas id="workHoursChart"></canvas>
+    </div>
+  </section>
+
+
+
+  <section class="pie_chart_section">
+    <div class="pie_chart_section_head">
+      <h3>
+        Punctuality Summary
+        <span class="info-icon" data-tooltip="Breakdown of present, late, and absent days shown in a pie chart">
+          <i class="fa-solid fa-circle-info"></i>
+        </span>
+      </h3>
+    </div>
+    <div class="pie_chart_heading">
+      <h3>Attendance Distribution</h3>
+      <p>This chart shows the ratio of Present, Late, and Absent days</p>
+    </div>
+    <div class="pie_chart_wrapper">
+      <canvas id="attendancePieChart"></canvas>
+      <div id="attendanceLegend" class="custom-legend"></div>
+    </div>
+
+    <div class="pie_chart_divs">
+      <div class="pie_chart_div_1">
+        <div class="fa_calender">
+          <i class="fa-solid fa-calendar-days"></i>
+        </div>
+        <div class="text_pie_chart_1">
+          <span>Total Days Tracked</span>
+          <h2>28</h2>
+        </div>
+      </div>
+      <div class="pie_chart_div_2">
+        <div class="fa_clock">
+          <i class="fa-solid fa-calendar-week"></i>
+        </div>
+        <div class="text_pie_chart_2">
+          <span>Most Common Late Day</span>
+          <h2>Monday</h2>
+        </div>
+      </div>
+      <div class="pie_chart_div_3">
+        <div class="fa_award">
+          <i class="fa-solid fa-trophy"></i>
+        </div>
+        <div class="text_pie_chart_3">
+          <span>Longest On-Time Track</span>
+          <h2>12 Days</h2>
+        </div>
+      </div>
+    </div>
+
+
+
+  </section>
+
 
 </body>
 <script src="js/Reports&Analytics.js"></script>

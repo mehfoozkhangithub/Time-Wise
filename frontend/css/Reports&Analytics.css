@@ -15,6 +15,7 @@
   --border: #D6DDE3;
   --success: #A9D6C2;
   --error: #F2A3A3;
+  --warning: #FFD27F;
 }
 
 body.dark-mode {
@@ -28,6 +29,7 @@ body.dark-mode {
   --border: #3B4251;
   --success: #81E6C3;
   --error: #F17C7C;
+  --warning: #FFD27F;
 }
 
 /* ============================
@@ -100,13 +102,13 @@ h1, h2, h3, h4, h5 {
 
 /* User View Button (Primary) */
 .user_view {
-  background: #29A3E0; /* Vibrant blue */
-  color: white;
+  background: var(--primary); /* Vibrant blue */
+  color: #fff;
 }
 
 .user_view:hover {
   transform: translateY(-3px) scale(1.05);
-  background: #2393CA; /* Slightly darker blue */
+  background: var(--primary-hover); /* Slightly darker blue */
   box-shadow: 0 4px 8px rgba(41, 163, 224, 0.3);
 }
 
@@ -115,21 +117,21 @@ h1, h2, h3, h4, h5 {
   box-shadow: 0 1px 2px rgba(41, 163, 224, 0.2);
 }
 
-/* Admin View Button (Alert/Caution) */
+/* Admin View Button (Professional Contrast) */
 .admin_view {
-  background: #F2A3A3; /* Soft red/pink */
-  color: #D62C1A; /* Dark red text for contrast */
+  background: var(--text-primary);  /* Strong neutral dark */
+  color: var(--surface);            /* Light text for readability */
 }
 
 .admin_view:hover {
   transform: translateY(-3px) scale(1.05);
-  background: #DA9393; /* Darker pink */
-  box-shadow: 0 4px 8px rgba(242, 163, 163, 0.3);
+  background: #3a3f4c; /* Slightly lighter dark tone */
+  box-shadow: 0 4px 8px rgba(44, 47, 58, 0.3);
 }
 
 .admin_view:active {
   transform: translateY(1px) scale(0.98);
-  box-shadow: 0 1px 2px rgba(242, 163, 163, 0.2);
+  box-shadow: 0 1px 2px rgba(44, 47, 58, 0.2);
 }
 
 /* Optional: Add icons using Font Awesome */
@@ -140,10 +142,11 @@ h1, h2, h3, h4, h5 {
 }
 
 .admin_view::before {
-  content: "\f085"; /* Admin (cog) icon */
+  content: "\f085"; /* Cog icon for admin */
   font-family: "Font Awesome 6 Free";
   font-weight: 900;
 }
+
 
 /* Reports Head 2 starts */
 
@@ -350,18 +353,366 @@ body.dark_mode .dropdown_option:hover {
 /* Bar Chart */
 
 .chart-wrapper {
-  display: grid;
-  place-items: center;
-  height: 100vh;
-  padding: 20px;
+  width: 100%;
+  margin-top: 1rem;
+  padding: 18px;
+  border-radius: 12px;
+  background: var(--surface); /* card background */
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.chart-wrapper canvas {
+  width: 100% !important;
+  height: 420px !important;
+  display: block;
+  background: transparent; /* stays see-through */
+  border-radius: 8px;
 }
 
 .bar_diagram {
-  background-color: var(--surface);
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  height: 400px;
   width: 100%;
-  max-width: 800px;
+  height: 420px;               /* chart height */
+  background: var(--surface);  /* surrounding area inside the chart-wrapper */
+  border-radius: 10px;
+  padding: 18px;               /* inner padding so chart doesn't touch edges */
+  box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+}
+
+.bar_diagram canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+  background: transparent; /* canvas itself transparent; shows parent bg */
+  border-radius: 6px;
+}
+
+/* Bar Chart Section */
+.bar_chart_section {
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  max-width: 1200px;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s;
+}
+
+.bar_chart_section:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+  border-color: var(--primary);
+}
+
+.bar_chart_section_head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.bar_chart_section_head h3 {
+  font-size: 1.2rem;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* Metrics cards */
+.bar_chart_metrics {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0 1.5rem;
+  gap: 1rem;
+}
+
+.metric_card {
+  flex: 1;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px 14px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+/* hover */
+.metric_card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.07);
+  border-color: var(--primary);
+}
+
+/* small label */
+.metric_card p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin: 0;
+  padding: 0;
+}
+
+/* big value */
+.metric_card h4 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0.25rem 0 0;
+}
+
+/* Metric Icons */
+.metric_icon {
+  width: 36px;       /* smaller square */
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4px;
+  border-radius: 8px;
+  color: white;
+  font-size: 1.05rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+}
+
+.metric_icon.total_hours { background: var(--primary); }
+.metric_icon.average_day { background: var(--success); }
+.metric_icon.days_missed  { background: var(--error); }
+
+.metric_icon i { transform: translateY(1px); }
+
+
+/* Chart container */
+.pie_chart_section {
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  max-width: 1200px;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s;
+}
+
+.pie_chart_section:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+  border-color: var(--primary);
+}
+
+/* Toggle Buttons */
+.toggle-container {
+  display: flex;
+  gap: 10px;
+  background: var(--bg);
+  padding: 6px;
+  border-radius: 50px;
+  border: 1px solid var(--border);
+}
+
+.toggle-btn {
+  padding: 7px 16px;
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  transition: background 0.18s, color 0.18s, box-shadow 0.18s;
+  color: var(--text-secondary);
+  background: transparent;
+  border: 1px solid transparent;
+}
+
+.toggle-btn.active {
+  background: var(--primary);
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(41,163,224,0.18);
+}
+
+.toggle-btn:not(.active) {
+  background: transparent;
+  color: var(--text-secondary);
+}
+
+.toggle-btn:not(.active):hover {
+  background: var(--secondary);
+}
+
+
+
+/* Pie Chart Section */
+.pie_chart_section {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+.pie_chart_heading {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.pie_chart_heading h3 {
+  font-size: 1.2rem;
+  color: var(--text-primary);
+}
+
+.pie_chart_heading p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.pie_chart_wrapper {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.pie_chart_divs {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0 auto;
+}
+
+.pie_chart_div_1,
+.pie_chart_div_2,
+.pie_chart_div_3 {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.8rem 1rem;
+  background: var(--bg);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease, border-color 0.3s ease;
+}
+
+.pie_chart_div_1:hover,
+.pie_chart_div_2:hover,
+.pie_chart_div_3:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border-color: var(--primary);
+}
+
+.fa_calender,
+.fa_clock,
+.fa_award {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  color: var(--text-primary);
+}
+
+/* Individual colors */
+
+.fa_calender { background: var(--secondary); color: var(--primary); }
+
+.fa_clock { background: var(--warning); color: #000; }
+
+.fa_award { background: var(--success); color: #064e3b; }
+
+
+.custom-legend {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 14px;
+  color: var(--text-primary);
+}
+
+.legend-color {
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.info-icon {
+  position: relative;
+  display: inline-block;
+  margin-left: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--primary);
+}
+
+.info-icon i {
+  background: var(--secondary);
+  border-radius: 50%;
+  padding: 4px;
+  font-size: 12px;
+  color: var(--primary);
+  transition: all 0.2s ease;
+}
+
+.info-icon:hover i {
+  background: var(--primary);
+  color: #fff;
+}
+
+/* Tooltip styling */
+.info-icon::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 130%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--surface);
+  color: var(--text-primary);
+  font-size: 12px;
+  line-height: 1.4;
+  white-space: normal;
+  width: max-content;
+  max-width: 220px; /* makes it compact */
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease;
+  z-index: 10;
+}
+
+/* Small arrow under tooltip */
+.info-icon::before {
+  content: "";
+  position: absolute;
+  bottom: 115%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: var(--surface) transparent transparent transparent;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease;
+}
+
+.info-icon:hover::after,
+.info-icon:hover::before {
+  opacity: 1;
+  visibility: visible;
 }
