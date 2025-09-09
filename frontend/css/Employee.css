@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+DK+Loopet:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* ============================
+   THEME COLOR VARIABLES
+============================= */
+:root {
+  --bg: #F9FBFC;
+  --surface: #EEF3F7;
+  --primary: #29A3E0;
+  --primary-hover: #218FC4;
+  --secondary: #D4EBF7;
+  --text-primary: #2C2F3A;
+  --text-secondary: #6E7A88;
+  --border: #D6DDE3;
+  --success: #A9D6C2;
+  --error: #F2A3A3;
+  --warning: #FFD27F;
+}
+
+body.dark-mode {
+  --bg: #1F242D;
+  --surface: #2A2F3A;
+  --primary: #3EB5E8;
+  --primary-hover: #53C1F0;
+  --secondary: #8AD5F2;
+  --text-primary: #E4E8ED;
+  --text-secondary: #A2ACB8;
+  --border: #3B4251;
+  --success: #81E6C3;
+  --error: #F17C7C;
+  --warning: #FFD27F;
+}
+
+/* ============================
+   GLOBAL STYLES
+============================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--text-primary);
+  color: var(--text-secondary);
+  background: var(--bg);
+  min-height: 100vh;
+  line-height: 1.5;
+  transition: background-color 0.3s, color 0.3s;
+  /* display: grid;
+  grid-template-areas: "navbar" "main";
+  grid-template-rows: auto 1fr; */
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+
+/* Employee Info Section */
+
+.employee_info_section {
+  border: 1px solid black;
+  padding: 40px;
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  gap: 80px;
+  height: 90%;
+  align-items: flex-start;
+}
+
+/* Employee Section Left */
+
+.employee_detail_container{
+  border: 1.5px solid var(--border);
+ display: grid;
+ /* background: white; */
+ grid-template-columns: 1fr 1fr;
+ grid-template-rows: auto auto;
+ grid-template-areas:
+ "A B"
+ "C C";
+ padding: 20px;
+ border-radius: 10px;
+ box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+ width: 70%;
+ height: 100%;
+}
+
+.emp_sect_left {
+  grid-area: A;
+  height: 100%;
+  display: flex;
+  padding: 1.75em;
+}
+
+.emp_name_header {
+  display: flex;
+}
+
+.img_block {
+  background: purple;
+  border-radius: 50%;
+  height: 75px;
+  width: 75px;
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+}
+
+.img_block > p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.emp_deets {
+  display: flex;
+  flex-direction: column;
+}
+
+.emp_details {
+  grid-area: B;
+  height: 100%;
+  display: flex;
+  gap: 20px;
+}
+
+/* Employee Badges */
+
+.employee_badges {
+  margin-top: 1.5rem;
+  padding: 1.2rem;
+  background: var(--surface);
+  border-radius: 16px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  width: 100%;
+  grid-area:C;
+}
+
+.employee_badges h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.badges_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 1rem;
+}
+
+.badge {
+  background: var(--bg);
+  padding: 0.8rem;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.badge i {
+  font-size: 1.4rem;
+  margin-bottom: 0.4rem;
+  color: var(--primary);
+}
+
+.badge span {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.badge.unlocked:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.badge.locked {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.badge.locked i {
+  color: var(--text-secondary);
+}
+
+/* Employee Section Contact */
+.emp_sect_contact {
+ border: 1.5px solid var(--border);
+ padding: 20px;
+ border-radius: 10px;
+ box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+ /* height: inherit; */
+}
+
+/* Employee Details Button */
+
+.employee_deets_buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.employee_deets_buttons button {
+  flex: 1;
+  padding: 1rem 1.2rem;
+  border: none;
+  border-radius: 12px;
+  background: var(--surface);
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Send Message Button */
+.employee_deets_buttons .send_message {
+  background: var(--primary);
+  color: white;
+}
+
+.employee_deets_buttons .send_message:hover {
+  background: var(--primary-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* View Reports Button */
+.employee_deets_buttons .view_reports {
+  background: var(--surface);
+  color: var(--text-primary);
+}
