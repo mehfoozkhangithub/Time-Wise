@@ -230,6 +230,164 @@
       </div>
       </div>
     </div>
+<section class="progress_section">
+  <div class="progress_card" data-current="39.2" data-target="40" id="weeklyCard">
+    <h4>Weekly Hours Target</h4>
+    <div class="progress_svg_wrap">
+      <svg class="progress_svg" viewBox="0 0 100 10" preserveAspectRatio="none" role="img"
+        aria-label="Weekly progress bar">
+        <!-- background bar -->
+        <rect class="bar-bg" x="0" y="0" width="100" height="10" rx="5" />
+        <!-- foreground bar (we scale this using CSS variable --pct) -->
+        <rect class="bar-fg" x="0" y="0" width="100" height="10" rx="5" />
+      </svg>
+    </div>
+    <p class="progress_value"><span class="value-text">39.2</span> / <span class="target-text">40</span> Hours</p>
+    <p class="progress_remaining">0.8 Hours Remaining</p>
+  </div>
+
+  <div class="progress_card" data-current="22" data-target="23" id="monthlyCard">
+    <h4>Monthly Attendance</h4>
+    <div class="progress_svg_wrap">
+      <svg class="progress_svg" viewBox="0 0 100 10" preserveAspectRatio="none" role="img"
+        aria-label="Monthly progress bar">
+        <rect class="bar-bg" x="0" y="0" width="100" height="10" rx="5" />
+        <rect class="bar-fg" x="0" y="0" width="100" height="10" rx="5" />
+      </svg>
+    </div>
+    <p class="progress_value"><span class="value-text">22</span> / <span class="target-text">23</span> Days</p>
+    <p class="progress_remaining">1 Day Remaining</p>
+  </div>
+</section>
+
+
+<section class="attendace_div">
+  <div class="upper_section">
+    <div class="days_filter">
+      <i class="fa-regular fa-calendar"></i>
+      <div class="days_filter_dropdown">
+        <div class="days_dropdown_selected">Last 30 Days</div>
+        <ul class="dropdown-options">
+          <li>Last 7 Days</li>
+          <li>Last 30 Days</li>
+          <li>Last 90 Days</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="status_filter">
+      <i class="fa-solid fa-filter"></i>
+      <div class="status_filter_dropdown">
+        <div class="status_dropdown_selected">All Status</div>
+        <ul class="dropdown-options">
+          <li>All Status</li>
+          <li>On Time</li>
+          <li>Late</li>
+          <li>Absent</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="attendance_data_div">
+    <div class="attendace_div_total_days">
+      <h3>Total Days</h3>
+      <span>23</span>
+    </div>
+    <div class="attendace_div_on_time">
+      <h3>On Time</h3>
+      <span>19</span>
+    </div>
+    <div class="attendace_div_late">
+      <h3>Late</h3>
+      <span>3</span>
+    </div>
+    <div class="attendace_div_absent">
+      <h3>Absent</h3>
+      <span>1</span>
+    </div>
+  </div>
+
+
+</section>
+<section class="attendance_table_section">
+  <span>Attendance Records</span>
+  <table class="attendace_table">
+    <tr>
+      <th>Date</th>
+      <th>Check-In</th>
+      <th>Check-Out</th>
+      <th>Hours</th>
+      <th>Status</th>
+      <th>Notes</th>
+    </tr>
+    <tr>
+      <td style="color: #252831 ;">15/01/2025</td>
+      <td><i class="fa-regular fa-alarm-clock"></i> 09:02</td>
+      <td>17:45</td>
+      <td>8.5h</td>
+      <td><span class="late">Late</span></td>
+      <td>Traffic Delay</td>
+    </tr>
+    <tr>
+      <td style="color: #252831 ;">14/01/2025</td>
+      <td><i class="fa-regular fa-circle-check"></i> 08:58</td>
+      <td>17:30</td>
+      <td>8.5h</td>
+      <td><span class="on_time">On Time</span></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td style="color: #252831 ;">13/0/2025</td>
+      <td><i class="fa-regular fa-circle-check"></i> 09:00</td>
+      <td>17:30</td>
+      <td>8.5h</td>
+      <td><span class="on_time">On Time</span></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td style="color: #252831 ;">12/01/2025</td>
+      <td><i class="fa-regular fa-circle-check"></i> 08:55</td>
+      <td>17:28</td>
+      <td>8.5h</td>
+      <td><span class="on_time">On Time</span></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td style="color: #252831 ;">11/01/2025</td>
+      <td><i class="fa-regular fa-alarm-clock"></i> 09:15</td>
+      <td>17:28</td>
+      <td>8.5h</td>
+      <td><span class="late">Late</span></td>
+      <td>Doctor Appointment</td>
+    </tr>
+    <tr>
+      <td style="color: #252831 ;">10/01/2025</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+      <td><span class="absent">Absent</span></td>
+      <td>Sick Leave</td>
+    </tr>
+    <tr>
+      <td style="color: #252831 ;">09/01/2025</td>
+      <td><i class="fa-regular fa-circle-check"></i> 08:58</td>
+      <td>17:30</td>
+      <td>8.5h</td>
+      <td><span class="on_time">On Time</span></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td style="color: #252831 ;">08/01/2025</td>
+      <td><i class="fa-regular fa-circle-check"></i> 08:59</td>
+      <td>17:39</td>
+      <td>8.5h</td>
+      <td><span class="on_time">On Time</span></td>
+      <td></td>
+    </tr>
+  </table>
+</section>
+
 
   </section>
 

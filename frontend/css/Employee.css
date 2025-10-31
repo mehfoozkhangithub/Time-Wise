@@ -612,3 +612,326 @@ h1, h2, h3, h4, h5 {
   font-size: 26px;
   color: #111827;
 }
+
+/* Progress Bar */
+/* container card */
+.progress_section {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+/* individual card */
+.progress_card {
+  flex: 1;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  min-width: 220px;
+}
+.progress_card:hover { transform: translateY(-4px); box-shadow: 0 6px 18px rgba(0,0,0,0.06); }
+
+.progress_card h4 { margin: 0 0 .6rem; color: var(--text-primary); font-size: 1rem; }
+
+/* svg wrapper to center the smaller inner bar */
+.progress_svg_wrap {
+  width: 100%;
+  padding: 0.6rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* the SVG takes full width of wrapper but the visible bar is inside the svg area */
+.progress_svg {
+  width: 70%;             /* control visual length of bar here */
+  height: 18px;           /* thicker bar */
+  overflow: visible;
+  display: block;
+}
+
+/* background bar */
+.progress_svg .bar-bg {
+  fill: var(--bg);        /* subtle background */
+  stroke: var(--border);
+  stroke-width: 0.3;
+}
+
+/* foreground bar (we animate this via scaleX using --pct variable set from JS) */
+.progress_svg .bar-fg {
+  fill: var(--primary);
+  transform-origin: 0 0;           /* left edge is origin for scale */
+  transform: scaleX(var(--pct, 0));/* default to 0 if not set */
+  transition: transform 900ms cubic-bezier(.2,.8,.25,1);
+  /* rounded edges appear correct because rect has rx */
+}
+
+/* override colors for monthly card (success color) */
+#monthlyCard .progress_svg .bar-fg {
+  fill: var(--success);
+}
+
+/* text lines */
+.progress_value { margin: 0.35rem 0 0; color: var(--text-primary); font-weight: 600; }
+.progress_remaining { margin: 0; color: var(--text-secondary); font-size: 0.9rem; }
+
+/* Attendance Section */
+
+.upper_section {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  height: 80px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 12px;
+  margin-top: 10px;
+  background-color: var(--surface);
+}
+
+.days_filter {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+.days_filter:hover {
+  background: var(--secondary);
+}
+
+.days_filter i {
+  color: var(--primary);
+  font-size: 1rem;
+}
+
+.days_filter_dropdown {
+  position: relative;
+}
+
+.days_dropdown_selected {
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.dropdown-options {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  width: 150px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  list-style: none;
+  padding: 0.5rem 0;
+  margin: 0;
+  display: none;
+  z-index: 20;
+  animation: dropdownFade 0.25s ease;
+}
+
+.dropdown-options li {
+  padding: 0.6rem 1rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-options li:hover {
+  background: var(--primary);
+  color: white;
+}
+
+.dropdown-options.show {
+  display: block;
+}
+
+@keyframes dropdownFade {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.status_filter {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+.status_filter:hover {
+  background: var(--secondary);
+}
+
+.status_filter i {
+  color: var(--primary);
+  font-size: 1rem;
+}
+
+.status_filter_dropdown {
+  position: relative;
+}
+
+.status_dropdown_selected {
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.status_filter .dropdown-options {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  width: 150px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  list-style: none;
+  padding: 0.5rem 0;
+  margin: 0;
+  display: none;
+  z-index: 20;
+  animation: dropdownFade 0.25s ease;
+}
+
+.status_filter .dropdown-options li {
+  padding: 0.6rem 1rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.status_filter .dropdown-options li:hover {
+  background: var(--primary);
+  color: white;
+}
+
+.status_filter .dropdown-options.show {
+  display: block;
+}
+
+/* Attendance Data Div */
+
+.attendance_data_div {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  text-align: center;
+  width: 100%;
+}
+
+.attendance_data_div > div {
+  border: 1px solid var(--border);
+  padding: 1.3rem 3rem;
+  border-radius: 12px;
+  /* width: 110%; */
+  background-color: var(--surface);
+}
+
+.attendance_data_div > div > h3 {
+  color: var(--text-secondary);
+  font-size: 16px;
+}
+
+.attendace_div_total_days {
+  color: black;
+  font-size: 32px;
+}
+
+.attendace_div_on_time {
+  color: lightgreen;
+  font-size: 32px;
+}
+
+.attendace_div_late {
+  color: brown;
+  font-size: 32px;
+}
+
+.attendace_div_absent {
+  color: red;
+  font-size: 32px;
+}
+
+/* Attendance Table Section */
+
+.attendance_table_section {
+  display: flex;
+ flex-direction: column;
+ gap: 12px;
+ /* padding: 2.8rem; */
+ /* border: 1px solid black; */
+ margin: 2rem 0;
+}
+
+.attendace_table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.attendace_table th {
+  background-color: #f2f2f2;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px;
+  color: #333333;
+  font-weight: bold;
+}
+
+.attendace_table td {
+  border: 1px solid var(--border);
+  padding: 10px;
+}
+
+.attendace_table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.attendace_table tr:hover {
+  background-color: #f5f5f5;
+}
+
+.late {
+  padding: 4px 6px;
+  border-radius: 12px;
+  background-color: var(--warning);
+}
+
+.absent {
+  padding: 4px 6px;
+  border-radius: 12px;
+  background-color: var(--error);
+}
+
+.on_time {
+  padding: 4px 6px;
+  border-radius: 12px;
+  background-color: var(--success);
+}
