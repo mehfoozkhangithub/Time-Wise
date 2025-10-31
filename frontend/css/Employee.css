@@ -941,6 +941,11 @@ h1, h2, h3, h4, h5 {
 
 /* Notes Section */
 
+.notes {
+  display: flex;
+  flex-direction: column;
+}
+
 .manager_notes {
   border: 1px solid var(--border);
   background-color: var(--surface);
@@ -1186,4 +1191,159 @@ input,
 textarea,
 .custom_dropdown {
   transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.manager_notes_list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+}
+
+.note_card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.2rem 1.5rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: all 0.25s ease;
+}
+
+.note_card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.note_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.note_header h4 {
+  font-size: 1.05rem;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.note_tag {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.note_tag.review {
+  background: #e0ecff;
+  color: #2a6bf4;
+}
+
+.note_tag.meeting {
+  background: #e3f6e5;
+  color: #22c55e;
+}
+
+.note_tag.feedback {
+  background: #f3e8ff;
+  color: #9333ea;
+}
+
+.note_actions i {
+  color: var(--text-secondary);
+  cursor: pointer;
+  margin-left: 10px;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.note_actions i:hover {
+  color: var(--primary);
+  transform: scale(1.1);
+}
+
+.note_card p {
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  margin: 0.8rem 0 1rem;
+  line-height: 1.5;
+}
+
+.note_footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.8rem;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  border-top: 1px solid var(--border);
+  padding-top: 0.8rem;
+}
+
+.note_author {
+  background: var(--secondary);
+  color: var(--text-primary);
+  border-radius: 50%;
+  padding: 6px 9px;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+/* Inline editing styles */
+.note_edit_area {
+  width: 100%;
+  min-height: 70px;
+  resize: vertical;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 0.9rem;
+  font-family: inherit;
+  color: var(--text-primary);
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.note_edit_area:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 6px rgba(41, 163, 224, 0.3);
+}
+
+/* Save and cancel buttons */
+.edit_controls {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.6rem;
+  margin-top: 0.6rem;
+}
+
+.save_btn,
+.cancel_btn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+}
+
+.save_btn {
+  background: var(--primary);
+  color: white;
+}
+
+.save_btn:hover {
+  background: var(--primary-hover);
+}
+
+.cancel_btn {
+  background: var(--surface);
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+}
+
+.cancel_btn:hover {
+  background: var(--border);
 }

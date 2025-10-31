@@ -187,3 +187,65 @@ document.addEventListener('click', e => {
     if (!d.contains(e.target)) d.classList.remove('active');
   });
 });
+
+// Edit/Delete functionabilty
+document.addEventListener('DOMContentLoaded', () => {
+  const notesContainer = document.querySelector('.manager_notes_list')
+
+  notesContainer.addEventListener('click', (e) => {
+    const noteCard = e.target.closest('.note_card')
+    if (!noteCard) return
+
+    // DELETE FUNCTION
+    if (e.target.classList.contains('delete-note')) {
+      noteCard.remove()
+      return
+    }
+
+    // EDIT FUNCTION
+    if (e.target.classList.contains('edit-note')) {
+      const p = noteCard.querySelector('p')
+      const originalText = p.textContent.trim()
+
+      // Create editable textarea
+      const textarea = document.createElement('textarea')
+      textarea.classList.add('note_edit_area')
+      textarea.value = originalText
+      p.replaceWith(textarea)
+      textarea.focus()
+      textarea.select()
+
+      // Replace icons with save/cancel buttons
+      const actions = noteCard.querySelector('.note_actions')
+      actions.innerHTML = `
+        <button class="save_btn">Save</button>
+        <button class="cancel_btn">Cancel</button>
+      `
+
+      // SAVE BUTTON
+      actions.querySelector('.save_btn').addEventListener('click', () => {
+        const updatedText = textarea.value.trim() || 'No content provided.'
+        const newParagraph = document.createElement('p')
+        newParagraph.textContent = updatedText
+        textarea.replaceWith(newParagraph)
+        resetActions(actions)
+      })
+
+      // CANCEL BUTTON
+      actions.querySelector('.cancel_btn').addEventListener('click', () => {
+        const newParagraph = document.createElement('p')
+        newParagraph.textContent = originalText
+        textarea.replaceWith(newParagraph)
+        resetActions(actions)
+      })
+    }
+
+    function resetActions(actions) {
+      actions.innerHTML = `
+        <i class="fa-solid fa-pen edit-note"></i>
+        <i class="fa-solid fa-trash delete-note"></i>
+      `
+    }
+  })
+})
+
