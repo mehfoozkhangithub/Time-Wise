@@ -389,6 +389,78 @@
 </section>
 
 
+<section class="notes">
+  <div class="manager_notes">
+    <div class="manager_notes_div">
+      <h3>Manager Notes</h3>
+      <p>Private Notes and Feedbacks for Sarah Mitchell</p>
+    </div>
+    <div class="manager_notes_btn_div">
+      <button class="add_note" type="button"> <pre>+  Add Note</pre></button>
+    </div>
+
+    <!-- Modal Overlay -->
+    <div class="modal_overlay" id="modalOverlay"></div>
+
+    <!-- Modal Box -->
+    <div class="note_modal" id="noteModal">
+      <div class="modal_header">
+        <h2>Add Manager Note</h2>
+        <button class="close_modal" id="closeModal">&times;</button>
+      </div>
+
+      <p class="modal_subtext">Add a private note or feedback for this employee.</p>
+
+      <form class="note_form">
+        <!-- Title -->
+        <label for="noteTitle">Title</label>
+        <input type="text" id="noteTitle" placeholder="Note title..." />
+
+        <!-- Two dropdowns row -->
+        <div class="note_row">
+          <!-- Type Dropdown -->
+          <div class="note_field">
+            <label>Type</label>
+            <div class="custom_dropdown" id="typeDropdown">
+              <div class="selected_option">Feedback <i class="fa-solid fa-chevron-down"></i></div>
+              <div class="dropdown_list">
+                <div class="dropdown_item selected">Feedback <i class="fa-solid fa-check"></i></div>
+                <div class="dropdown_item">Review <i class="fa-solid fa-check"></i></div>
+                <div class="dropdown_item">Meeting Notes <i class="fa-solid fa-check"></i></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Priority Dropdown -->
+          <div class="note_field">
+            <label>Priority</label>
+            <div class="custom_dropdown" id="priorityDropdown">
+              <div class="selected_option">Medium <i class="fa-solid fa-chevron-down"></i></div>
+              <div class="dropdown_list">
+                <div class="dropdown_item">Low <i class="fa-solid fa-check"></i></div>
+                <div class="dropdown_item selected">Medium <i class="fa-solid fa-check"></i></div>
+                <div class="dropdown_item">High <i class="fa-solid fa-check"></i></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Content -->
+        <label for="noteContent">Content</label>
+        <textarea id="noteContent" placeholder="Write your note here..."></textarea>
+
+        <!-- Actions -->
+        <div class="modal_actions">
+          <button type="button" class="cancel_btn" id="cancelBtn">Cancel</button>
+          <button type="submit" class="add_btn">Add Note</button>
+        </div>
+      </form>
+    </div>
+
+</section>
+
+
+
   </section>
 
   <script src="js/Employee.js"></script>

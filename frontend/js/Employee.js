@@ -138,3 +138,52 @@ document.addEventListener('DOMContentLoaded', () => {
     statusOptions.classList.remove('show')
   })
 })
+
+// Add Notes Logic
+
+// Modal open/close
+const addNoteBtn = document.querySelector('.add_note');
+const modal = document.getElementById('noteModal');
+const overlay = document.getElementById('modalOverlay');
+const closeModal = document.getElementById('closeModal');
+const cancelBtn = document.getElementById('cancelBtn');
+
+addNoteBtn.onclick = () => {
+  modal.style.display = 'block';
+  overlay.style.display = 'block';
+};
+[closeModal, cancelBtn, overlay].forEach(el =>
+  el.addEventListener('click', () => {
+    modal.style.display = 'none';
+    overlay.style.display = 'none';
+  })
+);
+
+// Custom dropdown logic
+document.querySelectorAll('.custom_dropdown').forEach(dropdown => {
+  const selected = dropdown.querySelector('.selected_option');
+  const list = dropdown.querySelector('.dropdown_list');
+  const items = list.querySelectorAll('.dropdown_item');
+
+  // Toggle dropdown visibility
+  selected.onclick = () => {
+    dropdown.classList.toggle('active');
+  };
+
+  // Handle item selection
+  items.forEach(item => {
+    item.onclick = () => {
+      items.forEach(i => i.classList.remove('selected'));
+      item.classList.add('selected');
+      selected.innerHTML = `${item.textContent.trim()} <i class="fa-solid fa-chevron-down"></i>`;
+      dropdown.classList.remove('active');
+    };
+  });
+});
+
+// Close dropdowns if clicked outside
+document.addEventListener('click', e => {
+  document.querySelectorAll('.custom_dropdown').forEach(d => {
+    if (!d.contains(e.target)) d.classList.remove('active');
+  });
+});
