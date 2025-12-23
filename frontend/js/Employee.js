@@ -248,3 +248,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   })
 })
+
+// Performance bar svgs
+document.querySelectorAll('.bar-fg').forEach((bar) => {
+  const width = bar.getAttribute('width')
+  bar.style.setProperty('--target-width', width + '%')
+  bar.setAttribute('width', '0')
+  setTimeout(() => {
+    bar.style.width = width
+  }, 200)
+})
+
