@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+DK+Loopet:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+.admin-thought-section{
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.admin-thought-content{
+    width: 100%;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    border-radius: 15px;
+    background-color: #e4ecff;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+/* thought header */
+.thoughts-header{
+    display: flex;
+    justify-content: space-between;
+}
+.thoughts-header>h3{
+    font-family: 400;
+}
+.thoughts-filter{
+    display: flex;
+    gap: 20px;
+}
+.thoughts-dropdown{
+    width: 120px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+.addThought-btn{
+    padding: 7px 15px;
+    font-size: 16px;
+    color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 7px;
+    background-color: blue;
+}
+
+/* thougth input section */
+.thoughts-input-area{
+    padding: 10px;
+    flex-direction: column;
+    gap: 15px;
+    display: none;
+}
+.toggle-thought-input-area{
+    display: flex;
+}
+.thought-input{
+    width: 100%;
+    font-size: 15px;
+    border: 3px solid transparent;
+    outline: none;
+    border-radius: 7px;
+    padding: 10px 10px 20px 10px;
+}
+.toggle-thought-input{
+    border: 3px solid blue;
+}
+.thought-actions{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+}
+.cancel-btn,
+.share-btn{
+    padding: 5px 10px;
+    font-size: 14px;
+    border: none;
+    outline: none;
+    border-radius: 7px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+.share-btn{
+    color: #fff;
+    background-color: blue;
+}
+
+/* admin thought card */
+.admin-thought-card{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    
+}
+.user-avatar{
+    width: 5%;
+    text-align: center;
+    margin-top: 15px;
+    font-size: 20px;
+    font-weight: 400;
+}
+.thought-content{
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.thought-header{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.user-details{
+    display: flex;
+    gap: 20px;
+}
+.user-name{
+    font-weight: 550;
+}
+.post-time{
+    font-size: 14px;
+    opacity: 0.6;
+}
+.user-status{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.thought-text>p{
+    line-height: 1.6;
+}
+.thought-reactions{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.reaction-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+.single-thought{
+    width: 100%;
+    padding: 30px 20px;
+    display: flex;
+    gap: 15px;
+    border-radius: 15px;
+    background-color: #e4ecff;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}

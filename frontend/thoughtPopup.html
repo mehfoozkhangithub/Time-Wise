@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <title>Thought of the day Popup</title>
+    <link rel="stylesheet" href="./css/thoughtPopup.css">
+    <script src="./js/thoughtPopup.js" defer></script>
+</head>
+
+<body>
+    <div class="thought-popup-container">
+        <div class="user-info">
+            <img src="./css/utils/img/profile_avtar.avif" alt="user-profile img">
+            <div>
+                <p>Welcome, User Name 👋</p>
+                <p>Share your thoughts with the world</p>
+            </div>
+        </div>
+        <div class="thought-card">
+            <textarea name="thought" id="textarea" placeholder="Share your thought..."></textarea>
+            <div>
+                <p class="word-counter">0/250</p>
+                <div class="btns">
+                    <div class="post-thought-btn">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        <button onclick="thought(event)">Post Thought</button>
+                    </div>
+                    <a href="./Home.html"><button>Skip</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="success-msg-popup">
+        <div>
+            <i class="bi bi-check-circle"></i>
+        </div>
+        <div>
+            <h3>Thought Posted Successfully!</h3>
+            <p>Your thought has been shared. Thank you for contributing to our community!</p>
+        </div>
+        <a href="./Home.html"><button>Continue</button></a>
+    </div>
+
+</body>
+
+</html>

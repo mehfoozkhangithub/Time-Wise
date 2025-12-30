@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/totd.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" />
+    <script src="./js/totd.js" defer></script>
+    <title>Thoughts of the day</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js" defer></script>
+</head>
+
+<body>
+    
+    <header class="header"></header>
+    
+    <main>
+        <div class="dark-mode-container">
+            <button class="light-mode"><i class="bi bi-brightness-high"></i></button>
+            <button class="dark-mode"><i class="bi bi-moon"></i></button>
+        </div>
+
+        <section class="thoughts-container">
+            <div class="thought-content">
+                <div class="heading">
+                    <h1>Thought of the Day</h1>
+                </div>
+
+                <div class="thought-cards">
+                    
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer"></footer>
+
+
+    <script type="module">
+        import { navbar, style, footer } from "../frontend/js/nav_footer.js"
+        document.querySelector(".header").innerHTML = navbar();
+
+        let styleTag = document.createElement("style");
+        styleTag.textContent = style();
+        document.head.append(styleTag);
+
+        document.querySelector(".footer").innerHTML = footer();
+
+
+        const navBar = document.querySelector('.navbar-container');
+        const header = document.querySelector('.header');
+
+        // when we scroll the webpage a little bit then both classes fixed & fixed-header will be added & when we go on the top of the webpage these classes will be removed
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 0) {
+                navBar.classList.add('fixed');
+                header.classList.add('fixed-header');
+            } else {
+                navBar.classList.remove('fixed');
+                header.classList.remove('fixed-header');
+            }
+        });
+
+        // scroll button
+        const scrollBtn = document.querySelector(".fa-angle-up");
+
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 100) {
+                scrollBtn.classList.add("showScrollBtn");
+            }
+            else {
+                scrollBtn.classList.remove("showScrollBtn")
+            }
+        });
+
+        window.scrollUp = function () {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            })
+        }
+
+    </script>
+
+</body>
+
+</html>
