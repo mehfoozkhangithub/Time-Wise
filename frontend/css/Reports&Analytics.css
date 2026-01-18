@@ -1,0 +1,718 @@
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+DK+Loopet:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* ============================
+   THEME COLOR VARIABLES
+============================= */
+:root {
+  --bg: #F9FBFC;
+  --surface: #EEF3F7;
+  --primary: #29A3E0;
+  --primary-hover: #218FC4;
+  --secondary: #D4EBF7;
+  --text-primary: #2C2F3A;
+  --text-secondary: #6E7A88;
+  --border: #D6DDE3;
+  --success: #A9D6C2;
+  --error: #F2A3A3;
+  --warning: #FFD27F;
+}
+
+body.dark-mode {
+  --bg: #1F242D;
+  --surface: #2A2F3A;
+  --primary: #3EB5E8;
+  --primary-hover: #53C1F0;
+  --secondary: #8AD5F2;
+  --text-primary: #E4E8ED;
+  --text-secondary: #A2ACB8;
+  --border: #3B4251;
+  --success: #81E6C3;
+  --error: #F17C7C;
+  --warning: #FFD27F;
+}
+
+/* ============================
+   GLOBAL STYLES
+============================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--text-primary);
+  color: var(--text-secondary);
+  background: var(--bg);
+  min-height: 100vh;
+  line-height: 1.5;
+  transition: background-color 0.3s, color 0.3s;
+  /* display: grid;
+  grid-template-areas: "navbar" "main";
+  grid-template-rows: auto 1fr; */
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+
+/* Report Head */
+
+.reports_head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1.5em;
+}
+
+.report_heading_text > h1 {
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.view_div {
+  display: flex;
+  gap: 15px;
+  padding: 1.8em;
+}
+
+/* Report Head Buttons */
+
+.user_view, .admin_view {
+  padding: 0.9em 1.5em;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* User View Button (Primary) */
+.user_view {
+  background: var(--primary); /* Vibrant blue */
+  color: #fff;
+}
+
+.user_view:hover {
+  transform: translateY(-3px) scale(1.05);
+  background: var(--primary-hover); /* Slightly darker blue */
+  box-shadow: 0 4px 8px rgba(41, 163, 224, 0.3);
+}
+
+.user_view:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: 0 1px 2px rgba(41, 163, 224, 0.2);
+}
+
+/* Admin View Button (Professional Contrast) */
+.admin_view {
+  background: var(--text-primary);  /* Strong neutral dark */
+  color: var(--surface);            /* Light text for readability */
+}
+
+.admin_view:hover {
+  transform: translateY(-3px) scale(1.05);
+  background: #3a3f4c; /* Slightly lighter dark tone */
+  box-shadow: 0 4px 8px rgba(44, 47, 58, 0.3);
+}
+
+.admin_view:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: 0 1px 2px rgba(44, 47, 58, 0.2);
+}
+
+/* Optional: Add icons using Font Awesome */
+.user_view::before {
+  content: "\f007"; /* User icon */
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+}
+
+.admin_view::before {
+  content: "\f085"; /* Cog icon for admin */
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+}
+
+
+/* Reports Head 2 starts */
+
+div.reports_head_2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: -2.5em 5.5em 1.5em 1.5em;;
+}
+
+.reports_head_2 > p {
+  font-size: 18px;
+}
+
+/* Filter Div */
+
+.custom_dropdown {
+  position: relative;
+  width: 200px;
+  font-family: inherit;
+  margin: 10px 25px;
+}
+
+.dropdown_toggle {
+  width: 100%;
+  padding: 0.8em 1em;
+  border-radius: 8px;
+  border: 2px solid var(--border);
+  background: var(--surface);
+  color: var(--text_primary);
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.dropdown_toggle:hover {
+  border-color: var(--primary);
+  background: var(--bg);
+}
+
+.dropdown_icon {
+  transition: transform 0.3s ease;
+  color: var(--text_secondary);
+}
+
+.dropdown_options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: var(--surface);
+  border-radius: 8px;
+  border: 2px solid var(--border);
+  margin-top: 5px;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 10;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown_option {
+  padding: 0.8em 1em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: var(--text_primary);
+}
+
+.dropdown_option:hover {
+  background: var(--secondary);
+}
+
+.dropdown_option.active {
+  background: var(--primary);
+  color: white;
+}
+
+/* When dropdown is open */
+.custom_dropdown.active .dropdown_options {
+  max-height: 300px;
+  opacity: 1;
+  visibility: visible;
+}
+
+.custom_dropdown.active .dropdown_icon {
+  transform: rotate(180deg);
+  color: var(--primary);
+}
+
+/* Dark mode support */
+body.dark_mode .dropdown_options {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+body.dark_mode .dropdown_option:hover {
+  background: var(--bg);
+}
+
+/* Report Head Cards */
+
+.reports_head_cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  padding: 1rem;
+  width: 100%;
+  overflow-x: auto;
+   align-items: stretch;
+}
+
+/* Card common styles */
+.total_hours,
+.avg_daily,
+.punctuality,
+.active_days {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  min-width: 200px;
+  gap: 20px;
+   transition: all 0.3s ease;
+}
+
+.total_hours:hover,
+.avg_daily:hover,
+.punctuality:hover,
+.active_days:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12); /
+}
+
+/* Icon styles */
+.th_clock,
+.ad_stats,
+.punctuality_user {
+  font-size: 1.8rem;
+  margin-right: 1rem;
+  color: #29A3E0;
+}
+
+/* Text styles */
+.total_hours_text h2,
+.ad_daily_text h2,
+.punctuality_text h2,
+.active_days_text h2 {
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.total_hours_text p,
+.ad_daily_text p,
+.punctuality_text p,
+.active_days_text p {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+/* FA Colours */
+
+.th_clock i.fa-clock {
+  color: #29A3E0;
+  background: linear-gradient(135deg, #29A3E0, #1D83B4);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+
+.ad_stats i.fa-chart-column {
+  color: #27AE60;
+  background: linear-gradient(135deg, #27AE60, #219955);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.punctuality_user i.fa-users {
+  color: #8E44AD;
+  background: linear-gradient(135deg, #8E44AD, #7D3C98);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.active_days i.fa-fire {
+  color: #E74C3C;
+  background: linear-gradient(135deg, #E74C3C, #D62C1A);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-size: 30px;
+}
+
+/* Bar Chart */
+
+.chart-wrapper {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 18px;
+  border-radius: 12px;
+  background: var(--surface); /* card background */
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.chart-wrapper canvas {
+  width: 100% !important;
+  height: 420px !important;
+  display: block;
+  background: transparent; /* stays see-through */
+  border-radius: 8px;
+}
+
+.bar_diagram {
+  width: 100%;
+  height: 420px;               /* chart height */
+  background: var(--surface);  /* surrounding area inside the chart-wrapper */
+  border-radius: 10px;
+  padding: 18px;               /* inner padding so chart doesn't touch edges */
+  box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+}
+
+.bar_diagram canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+  background: transparent; /* canvas itself transparent; shows parent bg */
+  border-radius: 6px;
+}
+
+/* Bar Chart Section */
+.bar_chart_section {
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  max-width: 1200px;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s;
+}
+
+.bar_chart_section:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+  border-color: var(--primary);
+}
+
+.bar_chart_section_head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.bar_chart_section_head h3 {
+  font-size: 1.2rem;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* Metrics cards */
+.bar_chart_metrics {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0 1.5rem;
+  gap: 1rem;
+}
+
+.metric_card {
+  flex: 1;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px 14px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+/* hover */
+.metric_card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.07);
+  border-color: var(--primary);
+}
+
+/* small label */
+.metric_card p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin: 0;
+  padding: 0;
+}
+
+/* big value */
+.metric_card h4 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0.25rem 0 0;
+}
+
+/* Metric Icons */
+.metric_icon {
+  width: 36px;       /* smaller square */
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4px;
+  border-radius: 8px;
+  color: white;
+  font-size: 1.05rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+}
+
+.metric_icon.total_time { background: var(--primary); }
+.metric_icon.average_day { background: var(--success); }
+.metric_icon.days_missed  { background: var(--error); }
+
+.metric_icon i { transform: translateY(1px); }
+
+
+/* Chart container */
+.pie_chart_section {
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  max-width: 1200px;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s;
+}
+
+.pie_chart_section:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+  border-color: var(--primary);
+}
+
+/* Toggle Buttons */
+.toggle-container {
+  display: flex;
+  gap: 10px;
+  background: var(--bg);
+  padding: 6px;
+  border-radius: 50px;
+  border: 1px solid var(--border);
+}
+
+.toggle-btn {
+  padding: 7px 16px;
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  transition: background 0.18s, color 0.18s, box-shadow 0.18s;
+  color: var(--text-secondary);
+  background: transparent;
+  border: 1px solid transparent;
+}
+
+.toggle-btn.active {
+  background: var(--primary);
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(41,163,224,0.18);
+}
+
+.toggle-btn:not(.active) {
+  background: transparent;
+  color: var(--text-secondary);
+}
+
+.toggle-btn:not(.active):hover {
+  background: var(--secondary);
+}
+
+
+
+/* Pie Chart Section */
+.pie_chart_section {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+.pie_chart_heading {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.pie_chart_heading h3 {
+  font-size: 1.2rem;
+  color: var(--text-primary);
+}
+
+.pie_chart_heading p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.pie_chart_wrapper {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.pie_chart_divs {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0 auto;
+}
+
+.pie_chart_div_1,
+.pie_chart_div_2,
+.pie_chart_div_3 {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.8rem 1rem;
+  background: var(--bg);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease, border-color 0.3s ease;
+}
+
+.pie_chart_div_1:hover,
+.pie_chart_div_2:hover,
+.pie_chart_div_3:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border-color: var(--primary);
+}
+
+.fa_calender,
+.fa_clock,
+.fa_award {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  color: var(--text-primary);
+}
+
+/* Individual colors */
+
+.fa_calender { background: var(--secondary); color: var(--primary); }
+
+.fa_clock { background: var(--warning); color: #000; }
+
+.fa_award { background: var(--success); color: #064e3b; }
+
+
+.custom-legend {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 14px;
+  color: var(--text-primary);
+}
+
+.legend-color {
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.info-icon {
+  position: relative;
+  display: inline-block;
+  margin-left: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--primary);
+}
+
+.info-icon i {
+  background: var(--secondary);
+  border-radius: 50%;
+  padding: 4px;
+  font-size: 12px;
+  color: var(--primary);
+  transition: all 0.2s ease;
+}
+
+.info-icon:hover i {
+  background: var(--primary);
+  color: #fff;
+}
+
+/* Tooltip styling */
+.info-icon::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 130%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--surface);
+  color: var(--text-primary);
+  font-size: 12px;
+  line-height: 1.4;
+  white-space: normal;
+  width: max-content;
+  max-width: 220px; /* makes it compact */
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease;
+  z-index: 10;
+}
+
+/* Small arrow under tooltip */
+.info-icon::before {
+  content: "";
+  position: absolute;
+  bottom: 115%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: var(--surface) transparent transparent transparent;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease;
+}
+
+.info-icon:hover::after,
+.info-icon:hover::before {
+  opacity: 1;
+  visibility: visible;
+}

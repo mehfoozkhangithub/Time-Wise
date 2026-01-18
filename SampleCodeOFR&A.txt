@@ -1,0 +1,16 @@
+1) <section class="bar_chart_section"> <div class="bar_chart_section_head"> <h3>Work Hours Overview <span class="info-icon" data-tooltip="The total hours worked by an individual/team is shown here in a bar chart">ℹ</span> </h3> <div class="toggle-container"> <button class="toggle-btn active" id="weeklyBtn">Weekly</button> <button class="toggle-btn" id="monthlyBtn">Monthly</button> </div> </div> <div class="chart-wrapper"> <div class="bar_diagram"> <canvas id="workHoursChart"></canvas> </div> </div> </section>
+
+2)   <div class="bar_chart_metrics">
+    <div class="metric_card">
+      <p>Total Hours</p>
+      <h4 id="totalHours">42.7H</h4>
+    </div>
+    <div class="metric_card">
+      <p>Average per Day</p>
+      <h4 id="avgPerDay">6.1H</h4>
+    </div>
+    <div class="metric_card">
+      <p>Days Missed</p>
+      <h4 id="daysMissed">1</h4>
+    </div>
+  </div>
